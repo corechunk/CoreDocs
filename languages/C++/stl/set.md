@@ -1,52 +1,58 @@
-# 🌲 STL Set (Unique Sorted)
+# 🌲 STL Set (Unique Sorted) - Master Reference
 
 ## 1. The Objective
-`std::set` is an associative container that contains a sorted set of unique objects of type `Key`. It is perfect for storing a collection of items where you need to quickly check for existence and keep the data sorted.
+`std::set` is an associative container that contains a sorted set of unique objects. It is effectively a `map` where the value is the same as the key.
 
 ---
 
 ## 2. Visual Logic
-### Balanced Tree (Red-Black)
+### Uniqueness Rule
 ```text
-          [ 30 ]
-         /      \
-      [ 10 ]    [ 50 ]
+Set: { 10, 20, 30 }
+Insert(20) -> Rejected (Already exists)
+Insert(15) -> Re-balance -> { 10, 15, 20, 30 }
 ```
-- Adding `30` again will do nothing (Uniqueness).
-- Iterating always yields: `10, 30, 50`.
 
 ---
 
-## 3. The Logic Bridge
-- **Binary Search internally:** Like `std::map`, a `std::set` uses a balanced tree. This makes searching for an element $O(\log n)$.
-- **No Modification:** You cannot modify an element already in a set (it would break the sorted tree structure). You must erase it and insert the new value.
-- **Multiset:** If you need to store duplicate sorted values, use `std::multiset`.
+## 3. # The Logic Bridge (Key Points)
+
+- **Immutable Keys:** Elements in a set are `const`. You cannot modify an element in-place because it would violate the sorting property. You must `extract()` (C++17), change, and re-insert.
+- **Lookup:** $O(\log n)$.
+- **Range Queries:** Sets excel at finding ranges of values using `lower_bound` and `upper_bound`.
 
 ---
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 4. C++ Implementation (Full Usage)
+## 4. C++ Implementation (Exhaustive Usage)
 
 ```cpp
 #include <iostream>
 #include <set>
 
 int main() {
-    std::set<int> s = {50, 10, 30, 10}; // 10 is duplicate
+    // --- 1. INITIALIZATION ---
+    std::set<int> s = {3, 1, 4, 1, 5, 9};   // {1, 3, 4, 5, 9} (Unique)
 
-    // 1. Uniqueness check
-    std::cout << "Size: " << s.size() << "\n"; // Size is 3
+    // --- 2. MODIFIERS ---
+    s.insert(2);
+    s.emplace(6);
+    s.erase(1);                            // Remove by value
+    
+    // --- 3. LOOKUP & BOUNDS ---
+    auto it = s.find(4);
+    
+    // Range: All elements between 2 and 5
+    auto start = s.lower_bound(2);         // First element >= 2
+    auto end = s.upper_bound(5);           // First element > 5
 
-    // 2. Existence
-    if (s.find(30) != s.end()) {
-        std::cout << "30 exists.\n";
-    }
+    // --- 4. ADVANCED: Extract (C++17) ---
+    auto node = s.extract(3);              // Remove node without copying
+    node.value() = 33;                     // Modify it
+    s.insert(std::move(node));             // Re-insert
 
-    // 3. Lower Bound (First element >= X)
-    auto it = s.lower_bound(20);
-    std::cout << "First element >= 20: " << *it << "\n";
-
+    // --- 5. ITERATION ---
     for (int x : s) std::cout << x << " ";
 
     return 0;

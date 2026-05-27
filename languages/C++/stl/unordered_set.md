@@ -1,43 +1,59 @@
-# ⚡ STL Unordered Set (Unique Hashed)
+# ⚡ STL Unordered Set - Master Reference
 
 ## 1. The Objective
-`std::unordered_set` is a hash-table-based container of unique keys. It provides $O(1)$ average-case performance for lookups. Use this when you need a "Presence Check" (Is $X$ in the set?) and don't care about the order.
+`std::unordered_set` is an associative container that contains a set of unique objects. Search, insertion, and removal have average constant-time complexity.
 
 ---
 
 ## 2. Visual Logic
-### Hash Table Presence
+### Membership Check
 ```text
-Value: 50 -> Hash(50) -> Bucket 4 -> [ 50 ]
-Value: 10 -> Hash(10) -> Bucket 1 -> [ 10 ]
+Is 'X' in set?
+Hash(X) -> Index 3 -> [ Y | Z ] (Check both) -> Result: NO
 ```
 
 ---
 
-## 3. The Logic Bridge
-- **Speed Over Order:** It is significantly faster than `std::set` for large datasets but consumes more memory (to store the hash buckets).
-- **Custom Objects:** To store a custom `struct` in an unordered set, you must define a custom hash function for it.
+## 3. # The Logic Bridge (Key Points)
+
+- **Primary Use Case:** When you only need to know "Does this element exist?" and order is irrelevant.
+- **Custom Hashing:** To use a custom struct, you must specialize `std::hash<T>` or provide a hash function in the template.
+- **Performance:** On average much faster than `std::set`, but slower to iterate through the entire collection due to non-contiguity and bucket overhead.
 
 ---
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 4. C++ Implementation (Full Usage)
+## 4. C++ Implementation (Exhaustive Usage)
 
 ```cpp
 #include <iostream>
 #include <unordered_set>
+#include <string>
 
 int main() {
-    std::unordered_set<std::string> tags = {"cpp", "stl", "code"};
+    // --- 1. INITIALIZATION ---
+    std::unordered_set<std::string> tags = {"cpp", "ai", "chunk"};
 
-    // 1. $O(1)$ Check
-    if (tags.find("stl") != tags.end()) {
-        std::cout << "Tag found!\n";
+    // --- 2. MODIFIERS ---
+    tags.insert("code");
+    tags.emplace("stl");
+    tags.erase("ai");
+
+    // --- 3. LOOKUP ---
+    if (tags.find("cpp") != tags.end()) {
+        std::cout << "cpp found!\n";
     }
 
-    // 2. Load and Efficiency
-    std::cout << "Buckets: " << tags.bucket_count() << "\n";
+    if (tags.contains("chunk")) {           // C++20
+        std::cout << "chunk found!\n";
+    }
+
+    // --- 4. BUCKETS ---
+    std::cout << "Bucket count: " << tags.bucket_count() << "\n";
+    
+    // --- 5. ITERATION ---
+    for (const auto& tag : tags) std::cout << tag << " ";
 
     return 0;
 }

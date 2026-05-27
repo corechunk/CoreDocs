@@ -1,31 +1,32 @@
-# 🗺️ STL Map (Sorted Key-Value)
+# 🗺️ STL Map (Sorted Key-Value) - Master Reference
 
 ## 1. The Objective
-`std::map` is an associative container that stores key-value pairs. It is sorted by key and provides $O(\log n)$ time for search, insertion, and deletion.
+`std::map` is a sorted associative container that contains key-value pairs with unique keys. Keys are sorted using a comparison function (usually `operator<`).
 
 ---
 
 ## 2. Visual Logic
-### Balanced BST (Red-Black Tree)
+### Balanced Tree Path
+Searching for Key 80:
 ```text
-          [ Key: 50 | Val: "A" ]
-         /                      \
- [ Key: 20 | Val: "B" ]  [ Key: 80 | Val: "C" ]
+          [ 50 ]
+         /      \
+      [ 20 ]    [ 80 ] (Match!)
 ```
-- Keys are unique and strictly ordered.
 
 ---
 
-## 3. The Logic Bridge
-- **The "Order" Guarantee:** If you iterate through a `map`, the keys will always appear in sorted order.
-- **Internal Structure:** It is almost always implemented as a **Red-Black Tree**. This guarantees $O(\log n)$ even if data is added in sorted order (unlike a raw BST).
-- **Tradeoff:** It is slower than `unordered_map` because it must maintain the tree balance at every step.
+## 3. # The Logic Bridge (Key Points)
+
+- **Tree Property:** Iterating over a map is guaranteed to follow the order of the keys.
+- **Lookup Cost:** $O(\log n)$. Slower than `unordered_map` but consistent and ordered.
+- **Safe Insertion:** `insert` or `emplace` will not overwrite an existing key. `operator[]` **will** overwrite if the key exists, or **create** a default value if it doesn't.
 
 ---
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 4. C++ Implementation (Full Usage)
+## 4. C++ Implementation (Exhaustive Usage)
 
 ```cpp
 #include <iostream>
@@ -33,22 +34,34 @@
 #include <string>
 
 int main() {
-    // 1. Creation
-    std::map<std::string, int> ages;
+    // --- 1. INITIALIZATION ---
+    std::map<std::string, int> m = {{"Alice", 20}, {"Bob", 25}};
 
-    // 2. Insertion Variants
-    ages["Alice"] = 25; // Simple
-    ages.insert({"Bob", 30});
-    ages.emplace("Charlie", 35); // Efficient
+    // --- 2. INSERTION ---
+    m["Charlie"] = 30;                     // Map style (overwrites)
+    m.insert({"David", 35});               // Pair style (doesn't overwrite)
+    m.insert_or_assign("Alice", 21);       // C++17 Update
+    m.emplace("Eve", 40);                  // Efficient construction
 
-    // 3. Safe Lookup
-    if (ages.count("Alice")) {
-        std::cout << "Alice is " << ages["Alice"] << "\n";
+    // --- 3. LOOKUP ---
+    if (m.count("Alice")) std::cout << "Alice exists\n";
+    
+    auto it = m.find("Bob");
+    if (it != m.end()) {
+        std::cout << "Bob is " << it->second << "\n";
     }
 
-    // 4. Modern Iteration (Structured Bindings C++17)
-    for (const auto& [name, age] : ages) {
-        std::cout << name << ": " << age << "\n";
+    // --- 4. BOUNDS (Sorted advantage) ---
+    auto low = m.lower_bound("B");         // First element >= "B" (Bob)
+    auto up = m.upper_bound("B");          // First element > "B" (Charlie)
+
+    // --- 5. ERASURE ---
+    m.erase("David");                      // By key
+    m.erase(m.begin());                    // By iterator
+
+    // --- 6. MODERN ITERATION (C++17) ---
+    for (const auto& [name, age] : m) {
+        std::cout << name << " -> " << age << "\n";
     }
 
     return 0;
