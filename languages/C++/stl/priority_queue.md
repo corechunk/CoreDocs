@@ -1,54 +1,57 @@
-# 🔝 STL Priority Queue (Adapter)
+# 🔝 STL Priority Queue - Master Reference
 
 ## 1. The Objective
-`std::priority_queue` is a container adapter that provides constant-time access to the **largest** (or smallest) element. It behaves like a Queue where elements are ordered by priority rather than arrival time.
+`std::priority_queue` is a container adapter that provides constant-time lookup of the largest element. It is essentially an implementation of a **Binary Heap**.
 
 ---
 
 ## 2. Visual Logic
-### The Binary Heap Wrapper
-Internally, it uses `std::vector` and the `std::make_heap` algorithms to maintain a **Max-Heap** property.
+### Priority Ordering
 ```text
-          [ 100 ]  <-- Always at the top
-         /       \
-      [ 50 ]    [ 80 ]
+Items: [ 10, 50, 30 ]
+pq.top() -> 50 (Always highest)
 ```
 
 ---
 
 ## 3. # The Logic Bridge (Key Points)
 
-- **Default Behavior:** It is a **Max-Heap** by default (highest value on top).
-- **Custom Ordering:** To make it a **Min-Heap**, you must provide a comparator: `std::priority_queue<int, std::vector<int>, std::greater<int>>`.
-- **Complexity:** `top()` is $O(1)$, but `push()` and `pop()` are **$O(\log n)$** because they must restore the heap property.
+- **Complexity:** `push` and `pop` are **$O(\log n)$**. `top` is **$O(1)$**.
+- **No `at()` or `operator[]`:** You can only interact with the `top` element.
+- **Min-Heap Trick:** By default it's a Max-Heap. Use `std::greater<T>` to make it a Min-Heap.
 
 ---
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 4. C++ Implementation (Full Usage)
+## 4. C++ Implementation (Exhaustive Usage)
 
 ```cpp
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <functional>
 
 int main() {
-    // 1. Max-Heap (Default)
-    std::priority_queue<int> pq;
-    pq.push(10);
-    pq.push(30);
-    pq.push(20);
+    // --- 1. INITIALIZATION (Max-Heap) ---
+    std::priority_queue<int> max_pq;
 
-    std::cout << "Max-Heap Top: " << pq.top() << "\n"; // 30
-
-    // 2. Min-Heap (Custom)
+    // --- 2. INITIALIZATION (Min-Heap) ---
     std::priority_queue<int, std::vector<int>, std::greater<int>> min_pq;
-    min_pq.push(10);
-    min_pq.push(30);
-    min_pq.push(20);
 
-    std::cout << "Min-Heap Top: " << min_pq.top() << "\n"; // 10
+    // --- 3. MODIFIERS ---
+    max_pq.push(10);
+    max_pq.push(50);
+    max_pq.emplace(30);
+
+    // --- 4. ACCESS & REMOVAL ---
+    while (!max_pq.empty()) {
+        std::cout << max_pq.top() << " ";  // Output: 50 30 10
+        max_pq.pop();
+    }
+
+    // --- 5. SIZE ---
+    std::cout << "\nRemaining: " << max_pq.size() << "\n";
 
     return 0;
 }

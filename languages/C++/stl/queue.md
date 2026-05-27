@@ -1,28 +1,28 @@
-# 👥 STL Queue (Adapter)
+# 👥 STL Queue - Master Reference
 
 ## 1. The Objective
-`std::queue` is a container adapter that provides **FIFO** (First-In, First-Out) behavior. It restricts access to only the `front` (for removal) and the `back` (for insertion).
+`std::queue` is a container adapter that provides FIFO (First-In, First-Out) behavior. It limits access to the front and back of the underlying container.
 
 ---
 
 ## 2. Visual Logic
-### FIFO Restriction
+### Order of Operations
 ```text
-PUSH (Back) -> [ D | C | B | A ] -> POP (Front)
+Push -> [ 3 | 2 | 1 ] -> Pop (1)
 ```
 
 ---
 
 ## 3. # The Logic Bridge (Key Points)
 
-- **Underlying Container:** Uses `std::deque` by default. It **cannot** use `std::vector` because a queue needs `pop_front()`, which is $O(n)$ in a vector but $O(1)$ in a deque.
-- **Use Case:** Perfect for producer-consumer patterns, BFS graph traversals, and task scheduling.
+- **Vector Restriction:** You cannot use `std::vector` as the underlying container because a queue requires `pop_front()`, which vectors don't support efficiently ($O(n)$).
+- **Default Choice:** `std::deque` is the default because it supports $O(1)$ operations at both ends.
 
 ---
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 4. C++ Implementation (Full Usage)
+## 4. C++ Implementation (Exhaustive Usage)
 
 ```cpp
 #include <iostream>
@@ -30,21 +30,26 @@ PUSH (Back) -> [ D | C | B | A ] -> POP (Front)
 #include <list>
 
 int main() {
-    // 1. Default Queue (deque)
-    std::queue<std::string> q;
-
-    // 2. Custom Queue (list)
+    // --- 1. INITIALIZATION ---
+    std::queue<int> q;
     std::queue<int, std::list<int>> q_list;
 
-    // 3. Operations
-    q.push("First");
-    q.push("Second");
+    // --- 2. CAPACITY ---
+    bool b = q.empty();
+    size_t s = q.size();
 
-    std::cout << "Front: " << q.front() << "\n"; // First
-    std::cout << "Back: " << q.back() << "\n";   // Second
+    // --- 3. MODIFIERS ---
+    q.push(10);
+    q.push(20);
+    q.emplace(30);
 
-    q.pop();
-    std::cout << "New Front: " << q.front() << "\n"; // Second
+    // --- 4. ACCESS ---
+    std::cout << "Front: " << q.front() << "\n"; // 10
+    std::cout << "Back: " << q.back() << "\n";   // 30
+
+    // --- 5. REMOVAL ---
+    q.pop();                                     // Removes 10
+    std::cout << "New Front: " << q.front() << "\n"; // 20
 
     return 0;
 }

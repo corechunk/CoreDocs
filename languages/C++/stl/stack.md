@@ -1,29 +1,32 @@
-# 🥞 STL Stack (Adapter)
+# 🥞 STL Stack - Master Reference
 
 ## 1. The Objective
-`std::stack` is a **Container Adapter**. It isn't a standalone data structure; instead, it takes an existing container (like `deque` or `vector`) and limits its interface to provide **LIFO** (Last-In, First-Out) behavior.
+`std::stack` is a container adapter that gives the programmer the functionality of a stack - specifically, a LIFO (Last-In, First-Out) data structure.
 
 ---
 
 ## 2. Visual Logic
-### The Wrapper Pattern
+### Restricted Interface
 ```text
-[ User ] -> [ Stack API (push/pop) ] -> [ Underlying Deque ]
+[ User ] -> [ push / pop / top ] -> [ Underlying Container (Deque) ]
 ```
 
 ---
 
 ## 3. # The Logic Bridge (Key Points)
 
-- **Default Underlay:** By default, `std::stack` uses `std::deque`. Why? Because `deque` allocates memory in blocks and doesn't require a full re-allocation/copy when it grows.
-- **Switching Bases:** You can tell a stack to use a `vector` or `list` instead: `std::stack<int, std::vector<int>> s;`.
-- **Top Safety:** `pop()` in STL **does not return the value**. You must call `top()` to get the value and then `pop()` to remove it. This ensures exception safety.
+- **No Iterators:** You cannot iterate through a stack. You can only see the `top` element.
+- **Exception Safety:** `pop()` returns `void`. This prevents data loss if a copy constructor throws while returning a value.
+- **Container Options:** 
+    - `std::stack<int>` (Uses Deque)
+    - `std::stack<int, std::vector<int>>` (Uses Vector)
+    - `std::stack<int, std::list<int>>` (Uses List)
 
 ---
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 4. C++ Implementation (Full Usage)
+## 4. C++ Implementation (Exhaustive Usage)
 
 ```cpp
 #include <iostream>
@@ -31,20 +34,28 @@
 #include <vector>
 
 int main() {
-    // 1. Default Stack (using deque)
+    // --- 1. INITIALIZATION ---
     std::stack<int> s;
+    std::stack<int, std::vector<int>> s_custom;
 
-    // 2. Custom Stack (using vector)
-    std::stack<int, std::vector<int>> s_vec;
+    // --- 2. CAPACITY ---
+    if (s.empty()) std::cout << "Empty stack\n";
+    size_t sz = s.size();
 
-    // 3. Operations
+    // --- 3. MODIFIERS ---
     s.push(10);
-    s.emplace(20); // Construct in-place
-    
-    std::cout << "Top: " << s.top() << "\n";
-    
-    s.pop(); // Remove 20
-    std::cout << "New Top: " << s.top() << "\n";
+    s.push(20);
+    s.emplace(30);                         // Construct in-place
+
+    // --- 4. ACCESS & REMOVAL ---
+    std::cout << "Current Top: " << s.top() << "\n"; // 30
+    s.pop();                               // Removes 30
+    std::cout << "New Top: " << s.top() << "\n";     // 20
+
+    // --- 5. SWAP ---
+    std::stack<int> other;
+    other.push(100);
+    s.swap(other);                         // S now contains {100}
 
     return 0;
 }
