@@ -1,5 +1,8 @@
 # Necessary Repos (Benchmark Index)
 
+> [!tip] **[Mastering the Art of Project Analysis](../reading-projects.md)**
+> Learn how to map and reverse-engineer professional codebases.
+
 ## 🎨 Ricing & Aesthetics
 | Repository | Stack | Benchmark Strength |
 | :--- | :--- | :--- |
@@ -31,3 +34,7 @@
 - **Portability:** Adapting JaKooLit installer logic for `dotfiles.sh` v2.
 - **Tauri:** Performance benchmark for future Rust-based systems tools.
 - **Density:** Modeling `linutils` TUI after CTT's functional logic.
+
+---
+
+[➔ View Under-Dev Watchlist](./under-dev-repos.md)

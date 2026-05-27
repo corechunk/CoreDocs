@@ -1,5 +1,8 @@
 # 🏛️ CoreDocs: Global Master Entry Point
 
+> [!tip] **[🧠 Engineering Philosophy & Mastery](./engineering-philosophy.md)**
+> The "Mental OS" for senior systems engineering: Debugging, Testing, and managing Complexity.
+
 Welcome to the **Quantum Domain CoreDocs**. This is the central hub for all technical documentation, programming languages, and logical training modules.
 
 ---

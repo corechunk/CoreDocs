@@ -1,5 +1,8 @@
 # 📜 Official Documentation Index (The Sources of Truth)
 
+> [!tip] [**Mastering the Art of Technical Reading**](../reading-docs.md)
+> Learn how to distill raw documentation into actionable engineering signals.
+
 This is a high-signal index linking directly to the definitive official documentation, standards, and manuals for the core languages in this vault. Use these when the "distilled" wiki requires raw technical verification.
 
 ---
