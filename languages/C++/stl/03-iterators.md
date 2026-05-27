@@ -16,11 +16,18 @@ Container: [ A | B | C | D ]
 
 ---
 
-## 3. The Logic Bridge
-- **Iterator Categories:** Not all iterators are equal. 
-    - `vector` iterators can jump anywhere ($+5$). 
-    - `list` iterators can only move step-by-step (`++`).
-- **Modern C++ Advantage:** With `auto` and range-based loops, we rarely write manual iterator code, but understanding them is crucial for using Algorithms like `std::sort`.
+## 3. # The Logic Bridge (Key Points)
+
+### The 5 Power Levels
+1. **Input/Output:** Single-pass streaming.
+2. **Forward:** Multi-pass forward-only.
+3. **Bidirectional:** Move both ways (`list`, `map`).
+4. **Random Access:** Jump anywhere (`vector`, `deque`).
+5. **Contiguous:** Memory is a block (`vector`, `array`).
+
+### Critical Safety: Invalidation
+- **Contiguous containers (`vector`)** invalidate everything on resize.
+- **Node-based containers (`list`, `map`)** preserve iterators unless the specific node is deleted.
 
 ---
 
@@ -31,23 +38,23 @@ Container: [ A | B | C | D ]
 ```cpp
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 int main() {
     std::vector v = {1, 2, 3, 4, 5};
 
-    // 🏛️ Legacy Style
-    std::vector<int>::iterator it;
-    for(it = v.begin(); it != v.end(); ++it) {
-        if(*it == 3) std::cout << "Found 3\n";
-    }
-
-    // 🚀 Modern Style
-    auto it2 = std::find(v.begin(), v.end(), 4);
-    if(it2 != v.end()) std::cout << "Found 4\n";
+    // 🚀 Modern Style (Safe)
+    auto it = std::find(v.begin(), v.end(), 3);
+    if(it != v.end()) std::cout << "Found: " << *it << "\n";
 
     return 0;
 }
 ```
 
 ---
+
+## 🔗 Granular Sub-Topics
+- [Iterator Categories](iterator-categories.md) - Power levels and tag dispatching.
+- [Iterator Invalidation](iterator-invalidation.md) - When pointers become dangerous.
+
 [➔ Back to STL Hub](00-stl-overview.md)

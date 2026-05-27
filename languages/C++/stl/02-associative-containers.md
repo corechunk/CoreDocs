@@ -6,20 +6,32 @@ Associative containers store data in a sorted or hashed manner, allowing for ver
 ---
 
 ## 2. Visual Logic
-- **`std::map` / `std::set`:** Balanced Binary Trees (Red-Black). Sorted by key. $O(\log n)$ lookup.
-- **`std::unordered_map` / `std::unordered_set`:** Hash Tables. Unsorted. $O(1)$ average lookup.
+### The Associative Split
+- **Sorted (Tree-based):** `map`, `set`, `multimap`, `multiset`.
+- **Hashed (Unordered):** `unordered_map`, `unordered_set`, etc.
 
 ---
 
-## 3. The Logic Bridge
-- **The "Sorted" Tradeoff:** Use `map` if you need to iterate through keys in order. Use `unordered_map` if you only care about speed and don't care about order.
-- **Custom Keys:** To use a custom struct as a key in `map`, you must provide `operator<`. For `unordered_map`, you must provide a Hash function and `operator==`.
+## 3. # The Logic Bridge (Key Points)
+
+### Performance Comparison
+| Property | `map` / `set` | `unordered_map` / `unordered_set` |
+| :--- | :--- | :--- |
+| **Internal** | Red-Black Tree | Hash Table |
+| **Lookup** | $O(\log n)$ | $O(1)$ Average / $O(n)$ Worst |
+| **Order** | Strictly Sorted | No Order |
+| **Requirements** | `operator<` | Hash Function & `operator==` |
+
+### Key Selection Strategy
+1. **Need Order?** Use `map` / `set`.
+2. **Need Speed?** Use `unordered_map` / `unordered_set`.
+3. **Duplicates Allowed?** Use `multi` versions.
 
 ---
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 4. C++ Implementation (Map vs Unordered)
+## 4. C++ Implementation (Abstract Example)
 
 ```cpp
 #include <iostream>
@@ -27,19 +39,20 @@ Associative containers store data in a sorted or hashed manner, allowing for ver
 #include <unordered_map>
 
 int main() {
-    // 1. Sorted Map
-    std::map<std::string, int> scores;
-    scores["Core"] = 100;
-    scores["Chunk"] = 90;
+    std::map<int, int> sorted;
+    std::unordered_map<int, int> fast;
 
-    // 2. Unordered (Hash Table)
-    std::unordered_map<int, std::string> users;
-    users[1] = "AI";
-
-    std::cout << "Core Score: " << scores["Core"] << std::endl;
+    std::cout << "Associative pillars initialized." << std::endl;
     return 0;
 }
 ```
 
 ---
+
+## 🔗 Granular Sub-Topics
+- [std::map](map.md) - Sorted key-value pairs.
+- [std::unordered_map](unordered_map.md) - Hashed key-value performance.
+- [std::set](set.md) - Sorted unique keys.
+- [std::unordered_set](unordered_set.md) - Hashed presence check.
+
 [➔ Back to STL Hub](00-stl-overview.md)

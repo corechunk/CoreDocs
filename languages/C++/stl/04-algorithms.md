@@ -11,10 +11,19 @@ The Algorithms library provides functions for range-based tasks (Sorting, Search
 
 ---
 
-## 3. The Logic Bridge
-- **Decoupling:** Algorithms don't know about containers; they only know about iterators. This is why you can use the same `std::sort` on an Array or a Vector.
-- **Performance:** STL algorithms are often more optimized than hand-written loops (using loop unrolling and special CPU instructions).
-- **Ranges (C++20):** `std::ranges::sort(v)` is now the standard over `std::sort(v.begin(), v.end())`.
+## 3. # The Logic Bridge (Key Points)
+
+### Classification
+- **Non-Modifying:** `find`, `count`, `all_of`, `search`.
+- **Modifying:** `copy`, `move`, `transform`, `replace`.
+- **Sorting:** `sort`, `stable_sort`, `partial_sort`, `nth_element`.
+- **Numeric:** `accumulate`, `iota`, `inner_product`.
+
+### The Range Advantage
+Modern C++ (C++20) introduces the `std::ranges` namespace. This allows passing the container itself instead of iterator pairs.
+```cpp
+std::ranges::sort(v); // Instead of std::sort(v.begin(), v.end())
+```
 
 ---
 
@@ -37,13 +46,15 @@ int main() {
     // 2. Accumulate (Sum)
     int sum = std::accumulate(v.begin(), v.end(), 0);
 
-    // 3. Count
-    int counts = std::count(v.begin(), v.end(), 8);
-
-    std::cout << "Sum: " << sum << ", Counts of 8: " << counts << std::endl;
+    std::cout << "Sum: " << sum << std::endl;
     return 0;
 }
 ```
 
 ---
+
+## 🔗 Granular Sub-Topics
+- [Algorithm Complexity](algorithm-complexity.md) - Performance guarantees.
+- [Stable vs. Unstable](stable-vs-unstable.md) - Preserving relative order.
+
 [➔ Back to STL Hub](00-stl-overview.md)
