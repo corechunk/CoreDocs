@@ -19,4 +19,7 @@ Deep dive into the Java ecosystem, including the Java Standard Library, Kotlin d
 ### 4. 📊 [DSA Mastery](./DSA%20solving%20series/README.md)
 Data Structures and Algorithms implementation roadmap. From basic Stacks to advanced Dynamic Programming.
 
+### 5. 📜 [Official Docs Index](./Necessary-Repos/official-docs-index.md)
+The ultimate "Source of Truth" library. Direct links to ISO standards, official manuals, and API references for all core languages.
+
 ---
