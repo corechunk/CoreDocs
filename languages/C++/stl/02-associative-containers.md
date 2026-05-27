@@ -54,5 +54,6 @@ int main() {
 - [std::unordered_map](unordered_map.md) - Hashed key-value performance.
 - [std::set](set.md) - Sorted unique keys.
 - [std::unordered_set](unordered_set.md) - Hashed presence check.
+- [Multi-Containers](multi-containers.md) - `multimap` & `multiset` (Duplicate keys).
 
 [➔ Back to STL Hub](00-stl-overview.md)

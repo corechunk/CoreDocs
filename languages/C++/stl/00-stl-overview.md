@@ -86,5 +86,7 @@ int main() {
 - [Iterators Deep-Dive](03-iterators.md) - Input, Output, Forward, Bidirectional, Random.
 - [Algorithm Engine](04-algorithms.md) - Search, Sort, Modifying, Numeric.
 - [Lambdas & Functors](05-functional.md) - Captures, Mutable, Projections.
+- [Specialized Containers](bitset.md) - `bitset`, `multi` versions.
+- [Utility Structures](utility-containers.md) - `pair`, `tuple`.
 
 [➔ Back to C++ Hub](../master-cpp.md) | [➔ Back to Roadmap](../../DSA-Master-Roadmap.md)
