@@ -55,10 +55,17 @@ int main() {
 ---
 
 ## 🔗 Granular Sub-Topics
-- [std::vector](vector.md) - The standard dynamic array.
-- [std::list](list.md) - Doubly linked flexibility.
+
+### Base Containers
+- [std::vector](vector.md) - The standard dynamic array (Full API).
+- [std::list](list.md) - Doubly linked flexibility (Splice/Merge).
 - [std::deque](deque.md) - Double-ended efficiency.
 - [std::array](array.md) - Zero-overhead fixed size.
 - [std::forward_list](forward_list.md) - Singly linked minimalist.
+
+### Container Adapters
+- [std::stack](stack.md) - LIFO logic wrapper.
+- [std::queue](queue.md) - FIFO logic wrapper.
+- [std::priority_queue](priority_queue.md) - Heap-based ordering.
 
 [➔ Back to STL Hub](00-stl-overview.md)

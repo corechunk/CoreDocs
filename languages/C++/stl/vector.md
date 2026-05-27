@@ -1,34 +1,35 @@
-# 📈 STL Vector (Dynamic Array)
+# 📈 STL Vector (Dynamic Array) - Full Usage
 
 ## 1. The Objective
-`std::vector` is the go-to sequential container in C++. It is a dynamic array that manages its own memory, growing automatically as elements are added. It provides $O(1)$ random access and amortized $O(1)$ insertion at the end.
+`std::vector` is the most versatile and efficient sequential container. It provides $O(1)$ random access and amortized $O(1)$ tail operations. It should be the default container for almost every use case.
 
 ---
 
 ## 2. Visual Logic
-### Internal Layout
+### Capacity vs. Size
 ```text
-[ Data: Pointer to Heap Array ]
-[ Size: Current number of elements ]
-[ Capacity: Total space allocated ]
-
-Array in Heap: [ A | B | C | D | _ | _ | _ | _ ]
-                 ^           ^               ^
-                Size: 4    Capacity: 8
+[ A | B | C | D | _ | _ | _ | _ ]
+ <---- Size ---->
+ <----------- Capacity --------->
 ```
+- **Size:** Number of actual elements.
+- **Capacity:** Reserved space to avoid frequent reallocations.
 
 ---
 
-## 3. The Logic Bridge
-- **Cache Efficiency:** Because data is contiguous, vectors are the fastest container for iteration.
-- **Iterator Invalidation:** Adding elements can trigger a "Reallocation" (moving to a new, larger array). When this happens, all previous pointers/iterators to elements in the vector become **Invalid** (dangling pointers).
-- **Modern Optimization:** Modern compilers use **Move Semantics** to make resizing extremely fast, making `vector` superior to `list` for almost all use cases under 100,000 elements.
+## 3. # The Logic Bridge (Key Points)
+
+- **Perfect Forwarding (`emplace_back`):** Unlike `push_back`, which copies or moves an existing object, `emplace_back` constructs the object **directly inside** the vector's memory, saving a constructor call.
+- **Iterator Invalidation:**
+    - **Reallocation:** If `size > capacity`, all iterators are invalidated.
+    - **No Reallocation:** If no resize happens, only iterators after the point of insertion/deletion are invalidated.
+- **Exception Safety:** `vector` provides the **Strong Guarantee** (commit-or-rollback) if the element's move constructor is marked `noexcept`.
 
 ---
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## 4. C++ Implementation (Full Usage)
+## 4. C++ Implementation (The Complete API)
 
 ```cpp
 #include <iostream>
@@ -36,22 +37,30 @@ Array in Heap: [ A | B | C | D | _ | _ | _ | _ ]
 #include <algorithm>
 
 int main() {
-    // 1. Initialization (C++17 CTAD)
-    std::vector v = {10, 20, 30, 40};
+    // --- 1. INITIALIZATION ---
+    std::vector<int> v1;                     // Empty
+    std::vector<int> v2(5, 100);             // {100, 100, 100, 100, 100}
+    std::vector<int> v3 = {1, 2, 3, 4, 5};   // Initializer list
 
-    // 2. Efficient Addition
-    v.reserve(10); // Prevent frequent reallocations
-    v.push_back(50);
-    v.emplace_back(60); // Construct in-place (more efficient)
+    // --- 2. ACCESS ---
+    int first = v3.front();
+    int last = v3.back();
+    int second = v3.at(1); // Safe access (bounds checked)
 
-    // 3. Modern Iteration (C++20)
-    for (const auto& x : v) std::cout << x << " ";
+    // --- 3. MODIFIERS ---
+    v3.push_back(6);
+    v3.emplace_back(7); // Construct in-place
     
-    // 4. Capacity vs Size
-    std::cout << "\nSize: " << v.size() << ", Cap: " << v.capacity();
+    v3.insert(v3.begin() + 2, 99); // {1, 2, 99, 3, 4, 5, 6, 7}
+    v3.erase(v3.begin() + 2);      // Remove 99
+    
+    // --- 4. CAPACITY MANAGEMENT ---
+    v3.reserve(100);       // Pre-allocate space
+    v3.shrink_to_fit();    // Reclaim unused capacity
+    v3.clear();            // Remove all elements (size becomes 0)
 
-    // 5. Shrink to Fit (Reclaiming memory)
-    v.shrink_to_fit();
+    // --- 5. MODERN ITERATION ---
+    for (int x : v2) std::cout << x << " ";
 
     return 0;
 }
