@@ -33,7 +33,7 @@ STACK (LIFO)          QUEUE (FIFO)
 |___A___|
 (Last In, First Out)
 ```
-- [ ] [Monotonic Stack](data-structures/stack.md)
+- [ ] [Monotonic Stack](data-structures/monotonic-stack.md)
 - [ ] [Circular Queue](data-structures/circular-queue.md)
 - [ ] [Deque](data-structures/deque.md)
 - [ ] [Priority Queue](data-structures/priority-queue.md)
@@ -96,13 +96,18 @@ STACK (LIFO)          QUEUE (FIFO)
 - [ ] [Disjoint Set Union (DSU)](data-structures/disjoint-set-union.md)
 
 ### 2. Graph Traversals
-- [ ] [BFS](algorithms/graph-traversal.md)
-- [ ] [DFS](algorithms/graph-traversal.md)
+- [ ] [BFS](algorithms/bfs.md)
+- [ ] [DFS](algorithms/dfs.md)
+- [ ] [Topological Sort](algorithms/topological-sort.md)
 
 ### 3. [Shortest Paths](algorithms/shortest-paths.md)
-- [ ] [Dijkstra](algorithms/shortest-paths.md)
-- [ ] [Bellman-Ford](algorithms/shortest-paths.md)
-- [ ] [Floyd-Warshall](algorithms/shortest-paths.md)
+- [ ] [Dijkstra](algorithms/dijkstra.md)
+- [ ] [Bellman-Ford](algorithms/bellman-ford.md)
+- [ ] [Floyd-Warshall](algorithms/floyd-warshall.md)
+
+### 4. [Minimum Spanning Trees](algorithms/minimum-spanning-tree.md)
+- [ ] [Kruskal's Algorithm](algorithms/kruskal.md)
+- [ ] [Prim's Algorithm](algorithms/prim.md)
 
 ---
 

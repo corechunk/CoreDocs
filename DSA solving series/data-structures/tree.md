@@ -75,6 +75,7 @@ int main() {
 - [Red-Black Tree](red-black-tree.md) - Self-balancing BST (Color-based).
 - [B-Tree & LSM Tree](b-tree.md) - Multi-way trees for DBs.
 - [Trie (Prefix Tree)](trie.md) - String-based search trees.
-- [Segment & Fenwick Trees](advanced-trees.md) - Range query optimization.
+- [Segment Tree](segment-tree.md) - Range query optimization.
+- [Fenwick Tree](fenwick-tree.md) - Binary Indexed Tree for prefix sums.
 
 [➔ Back to Roadmap](../DSA-Master-Roadmap.md)
