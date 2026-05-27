@@ -1,0 +1,67 @@
+# 🧭 Grid & Spatial Logic: 50-Problem Roadmap
+
+Navigating 2D space is a core skill for games, simulations, and advanced algorithms. This roadmap takes you from simple matrix traversal to spatial coordinates and pathfinding.
+
+---
+
+## 🗺️ The Roadmap
+
+### 1. Matrix Foundations (1-10)
+1. [01-sum-all-elements.md](01-sum-all-elements.md)
+2. [02-row-major-traversal.md](02-row-major-traversal.md)
+3. [03-column-major-traversal.md](03-column-major-traversal.md)
+4. [04-find-max-element.md](04-find-max-element.md)
+5. [05-find-min-element.md](05-find-min-element.md)
+6. [06-linear-search-2d.md](06-linear-search-2d.md)
+7. [07-count-even-odd.md](07-count-even-odd.md)
+8. [08-matrix-transpose.md](08-matrix-transpose.md)
+9. [09-horizontal-mirror.md](09-horizontal-mirror.md)
+10. [10-vertical-mirror.md](10-vertical-mirror.md)
+
+### 2. Diagonals & Boundaries (11-20)
+11. [11-square-matrix-check.md](11-square-matrix-check.md)
+12. [12-primary-diagonal-sum.md](12-primary-diagonal-sum.md)
+13. [13-secondary-diagonal-sum.md](13-secondary-diagonal-sum.md)
+14. [14-print-primary-diagonal.md](14-print-primary-diagonal.md)
+15. [15-print-secondary-diagonal.md](15-print-secondary-diagonal.md)
+16. [16-print-boundary.md](16-print-boundary.md)
+17. [17-sum-boundary.md](17-sum-boundary.md)
+18. [18-rotate-boundary.md](18-rotate-boundary.md)
+19. [19-identity-matrix-check.md](19-identity-matrix-check.md)
+20. [20-scalar-multiplication.md](20-scalar-multiplication.md)
+
+### 3. Complex Movement (21-30)
+21. [21-matrix-addition.md](21-matrix-addition.md)
+22. [22-matrix-subtraction.md](22-matrix-subtraction.md)
+23. [23-scalar-matrix-check.md](23-scalar-matrix-check.md)
+24. [24-spiral-traversal.md](24-spiral-traversal.md)
+25. [25-anti-spiral-traversal.md](25-anti-spiral-traversal.md)
+26. [26-zig-zag-traversal.md](26-zig-zag-traversal.md)
+27. [27-row-wise-sorting.md](27-row-wise-sorting.md)
+28. [28-column-wise-sorting.md](28-column-wise-sorting.md)
+29. [29-rotate-90-degrees.md](29-rotate-90-degrees.md)
+30. [30-rotate-180-degrees.md](30-rotate-180-degrees.md)
+
+### 4. Spatial Reasoning (31-40)
+31. [31-find-saddle-point.md](31-find-saddle-point.md)
+32. [32-symmetric-matrix-check.md](32-symmetric-matrix-check.md)
+33. [33-skew-symmetric-check.md](33-skew-symmetric-check.md)
+34. [34-neighbors-4-dir.md](34-neighbors-4-dir.md)
+35. [35-neighbors-8-dir.md](35-neighbors-8-dir.md)
+36. [36-manhattan-distance.md](36-manhattan-distance.md)
+37. [37-euclidean-distance.md](37-euclidean-distance.md)
+38. [38-point-in-rectangle.md](38-point-in-rectangle.md)
+39. [39-rectangle-intersection.md](39-rectangle-intersection.md)
+40. [40-sudoku-block-check.md](40-sudoku-block-check.md)
+
+### 5. Pathfinding & Advanced Matrix (41-50)
+41. [41-tic-tac-toe-win.md](41-tic-tac-toe-win.md)
+42. [42-path-existence.md](42-path-existence.md)
+43. [43-flood-fill-logic.md](43-flood-fill-logic.md)
+44. [44-count-islands-basic.md](44-count-islands-basic.md)
+45. [45-sparse-matrix-check.md](45-sparse-matrix-check.md)
+46. [46-upper-triangular-check.md](46-upper-triangular-check.md)
+47. [47-lower-triangular-check.md](47-lower-triangular-check.md)
+48. [48-matrix-multiplication.md](48-matrix-multiplication.md)
+49. [49-pascal-2d.md](49-pascal-2d.md)
+50. [50-magic-square-gen.md](50-magic-square-gen.md)

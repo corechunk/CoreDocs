@@ -1,0 +1,67 @@
+# 🧭 String Manipulation: 50-Problem Roadmap
+
+Mastering text manipulation is the gateway to parsing, data processing, and interview success. This roadmap covers everything from basic character loops to complex pattern matching.
+
+---
+
+## 🗺️ The Roadmap
+
+### 1. Foundations & ASCII Math (1-10)
+1. [01-string-length.md](01-string-length.md) (Without `strlen`)
+2. [02-string-reverse.md](02-string-reverse.md) (In-place)
+3. [03-string-palindrome.md](03-string-palindrome.md)
+4. [04-count-vowels-consonants.md](04-count-vowels-consonants.md)
+5. [05-toggle-case.md](05-toggle-case.md) (ASCII logic)
+6. [06-case-conversion.md](06-case-conversion.md) (Upper/Lower manual)
+7. [07-ascii-sum.md](07-ascii-sum.md)
+8. [08-remove-whitespace.md](08-remove-whitespace.md)
+9. [09-string-to-int.md](09-string-to-int.md) (Manual `stoi`)
+10. [10-int-to-string.md](10-int-to-string.md) (Manual `to_string`)
+
+### 2. Frequency & Search (11-20)
+11. [11-first-non-repeating.md](11-first-non-repeating.md)
+12. [12-char-indices.md](12-char-indices.md)
+13. [13-count-word-occurrences.md](13-count-word-occurrences.md)
+14. [14-remove-duplicates.md](14-remove-duplicates.md)
+15. [15-digit-only-check.md](15-digit-only-check.md)
+16. [16-find-first-vowel.md](16-find-first-vowel.md)
+17. [17-replace-char.md](17-replace-char.md)
+18. [18-last-occurrence.md](18-last-occurrence.md)
+19. [19-sort-string.md](19-sort-string.md)
+20. [20-string-rotation.md](20-string-rotation.md)
+
+### 3. Pattern Matching (21-30)
+21. [21-anagram-check.md](21-anagram-check.md)
+22. [22-pangram-check.md](22-pangram-check.md)
+23. [23-isogram-check.md](23-isogram-check.md)
+24. [24-valid-ip-basics.md](24-valid-ip-basics.md)
+25. [25-valid-email-basics.md](25-valid-email-basics.md)
+26. [26-substring-search.md](26-substring-search.md) (Manual `strstr`)
+27. [27-prefix-suffix-check.md](27-prefix-suffix-check.md)
+28. [28-remove-vowels.md](28-remove-vowels.md)
+29. [29-is-rotation.md](29-is-rotation.md) (Of another string)
+30. [30-longest-word.md](30-longest-word.md)
+
+### 4. Mutation & Advanced Logic (31-40)
+31. [31-run-length-encoding.md](31-run-length-encoding.md)
+32. [32-run-length-decoding.md](32-run-length-decoding.md)
+33. [33-url-encoding.md](33-url-encoding.md)
+34. [34-capitalize-words.md](34-capitalize-words.md)
+35. [35-reverse-words.md](35-reverse-words.md)
+36. [36-shorthand-expansion.md](36-shorthand-expansion.md)
+37. [37-remove-special-chars.md](37-remove-special-chars.md)
+38. [38-one-char-difference.md](38-one-char-difference.md)
+39. [39-string-compression.md](39-string-compression.md)
+40. [40-string-shuffle-check.md](40-string-shuffle-check.md)
+
+### 5. Complex Parsers & Ciphers (41-50)
+41. [41-valid-parentheses.md](41-valid-parentheses.md)
+42. [42-longest-unique-substring.md](42-longest-unique-substring.md)
+43. [43-balanced-brackets.md](43-balanced-brackets.md)
+44. [44-isomorphic-strings.md](44-isomorphic-strings.md)
+45. [45-caesar-cipher.md](45-caesar-cipher.md)
+46. [46-longest-common-prefix.md](46-longest-common-prefix.md)
+47. [47-group-anagrams-logic.md](47-group-anagrams-logic.md)
+48. [48-word-wrap-basics.md](48-word-wrap-basics.md)
+49. [49-morse-code-conv.md](49-morse-code-conv.md)
+50. [50-vigenere-cipher.md](50-vigenere-cipher.md)

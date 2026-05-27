@@ -1,0 +1,52 @@
+# Segment: java
+## The Core Standard Library
+
+Foundational packages for every application.
+
+### Package & Class Tree
+
+- [**java**](./Overview.md)
+    - ├── [**lang**](lang.md) (Fundamentals)
+    - │    ├── [**String**](String.md)
+    - │    ├── [**StringBuilder**](StringBuilder.md)
+    - │    ├── [**System**](System.md)
+    - │    ├── [**Math**](./lang/Math.md)
+    - │    ├── [**Thread**](Thread.md)
+    - │    └── [**Object**](Object.md)
+    - ├── [**util**](util.md) (Collections & Utils)
+    - │    ├── [**ArrayList**](ArrayList.md)
+    - │    ├── [**HashMap**](HashMap.md)
+    - │    ├── [**Scanner**](Scanner.md)
+    - │    ├── [**Random**](./util/Random.md)
+    - │    ├── [**Collections**](Collections.md)
+    - │    └── [**concurrent**](concurrent.md) (Multi-threading)
+    - │         ├── [**Executors**](Executors.md)
+    - │         ├── [**ExecutorService**](ExecutorService.md)
+    - │         └── [**Future**](Future.md)
+    - ├── [**io**](io.md) (Classic I/O)
+    - │    ├── [**File**](File.md)
+    - │    ├── [**InputStream**](InputStream.md)
+    - │    ├── [**OutputStream**](OutputStream.md)
+    - │    ├── [**BufferedReader**](BufferedReader.md)
+    - │    ├── [**FileInputStream**](FileInputStream.md)
+    - │    └── [**FileOutputStream**](FileOutputStream.md)
+    - ├── [**net**](net.md) (Networking)
+    - │    ├── [**Socket**](Socket.md)
+    - │    ├── [**ServerSocket**](ServerSocket.md)
+    - │    ├── [**HttpURLConnection**](HttpURLConnection.md)
+    - │    ├── [**URL**](URL.md)
+    - │    └── [**InetAddress**](InetAddress.md)
+    - ├── [**nio**](nio.md) (Modern I/O)
+    - │    ├── [**Files**](Files.md)
+    - │    └── [**Path**](Path.md)
+    - ├── [**time**](time.md) (Date/Time)
+    - │    ├── [**LocalDate**](LocalDate.md)
+    - │    ├── [**LocalTime**](LocalTime.md)
+    - │    ├── [**LocalDateTime**](./time/LocalDateTime.md)
+    - │    └── [**Duration**](./time/Duration.md)
+    - └── [**math**](./math.md) (Precision Math)
+    -      ├── [**BigInteger**](./math/BigInteger.md)
+    -      └── [**BigDecimal**](./math/BigDecimal.md)
+
+---
+[**Back to Root**](../Overview.md)

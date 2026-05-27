@@ -1,0 +1,67 @@
+# 🧭 Tree Logic & Hierarchies: 50-Problem Roadmap
+
+Trees represent parent-child relationships and nested structures. This roadmap takes you from simple recursive traversals to complex Binary Search Tree (BST) optimizations and tree transformations.
+
+---
+
+## 🗺️ The Roadmap
+
+### 1. Tree Foundations (1-10)
+1. [01-tree-node-struct.md](01-tree-node-struct.md) (The Blueprint)
+2. [02-pre-order-traversal.md](02-pre-order-traversal.md) (Root-L-R)
+3. [03-in-order-traversal.md](03-in-order-traversal.md) (L-Root-R)
+4. [04-post-order-traversal.md](04-post-order-traversal.md) (L-R-Root)
+5. [05-level-order-traversal.md](05-level-order-traversal.md) (BFS)
+6. [06-find-height.md](06-find-height.md)
+7. [07-count-nodes.md](07-count-nodes.md)
+8. [08-count-leaf-nodes.md](08-count-leaf-nodes.md)
+9. [09-find-max-tree.md](09-find-max-tree.md)
+10. [10-search-node.md](10-search-node.md)
+
+### 2. Binary Search Trees (BST) (11-20)
+11. [11-search-in-bst.md](11-search-in-bst.md)
+12. [12-insert-into-bst.md](12-insert-into-bst.md)
+13. [13-delete-from-bst.md](13-delete-from-bst.md)
+14. [14-validate-bst.md](14-validate-bst.md)
+15. [15-min-max-in-bst.md](15-min-max-in-bst.md)
+16. [16-inorder-successor.md](16-inorder-successor.md)
+17. [17-inorder-predecessor.md](17-inorder-predecessor.md)
+18. [18-bst-from-sorted-array.md](18-bst-from-sorted-array.md)
+19. [19-range-sum-bst.md](19-range-sum-bst.md)
+20. [20-lca-of-bst.md](20-lca-of-bst.md)
+
+### 3. Views & Properties (21-30)
+21. [21-check-balanced.md](21-check-balanced.md) (AVL condition)
+22. [22-check-symmetric.md](22-check-symmetric.md)
+23. [23-left-view.md](23-left-view.md)
+24. [24-right-view.md](24-right-view.md)
+25. [25-top-view.md](25-top-view.md)
+26. [26-bottom-view.md](26-bottom-view.md)
+27. [27-zig-zag-traversal.md](27-zig-zag-traversal.md)
+28. [28-boundary-traversal.md](28-boundary-traversal.md)
+29. [29-diameter-of-tree.md](29-diameter-of-tree.md)
+30. [30-identical-trees-check.md](30-identical-trees-check.md)
+
+### 4. Paths & Transformations (31-40)
+31. [31-path-sum-exists.md](31-path-sum-exists.md)
+32. [32-all-root-to-leaf-paths.md](32-all-root-to-leaf-paths.md)
+33. [33-longest-path-sum.md](33-longest-path-sum.md)
+34. [34-invert-binary-tree.md](34-invert-binary-tree.md) (Mirror)
+35. [35-flatten-tree.md](35-flatten-tree.md) (To Linked List)
+36. [36-construct-pre-in.md](36-construct-pre-in.md)
+37. [37-construct-post-in.md](37-construct-post-in.md)
+38. [38-check-subtree.md](38-check-subtree.md)
+39. [39-sum-all-nodes.md](39-sum-all-nodes.md)
+40. [40-node-depth.md](40-node-depth.md)
+
+### 5. Advanced Tree Systems (41-50)
+41. [41-serialize-deserialize.md](41-serialize-deserialize.md)
+42. [42-next-right-pointers.md](42-next-right-pointers.md)
+43. [43-max-path-sum.md](43-max-path-sum.md) (Any node)
+44. [44-lca-binary-tree.md](44-lca-binary-tree.md)
+45. [45-bt-to-bst.md](45-bt-to-bst.md)
+46. [46-recover-bst.md](46-recover-bst.md)
+47. [47-kth-smallest-bst.md](47-kth-smallest-bst.md)
+48. [48-min-depth-tree.md](48-min-depth-tree.md)
+49. [49-max-width-tree.md](49-max-width-tree.md)
+50. [50-morris-traversal.md](50-morris-traversal.md) (Constant space)

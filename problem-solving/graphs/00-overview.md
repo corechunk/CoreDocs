@@ -1,0 +1,67 @@
+# 🧭 Network & Connectivity: 50-Problem Roadmap
+
+Graphs model the interconnected nature of the world. This roadmap takes you from simple adjacency lists to the complex shortest-path and spanning-tree algorithms that power modern technology.
+
+---
+
+## 🗺️ The Roadmap
+
+### 1. Graph Foundations & Representation (1-10)
+1. [01-adjacency-matrix.md](01-adjacency-matrix.md)
+2. [02-adjacency-list.md](02-adjacency-list.md)
+3. [03-bfs-traversal.md](03-bfs-traversal.md)
+4. [04-dfs-traversal.md](04-dfs-traversal.md)
+5. [05-count-nodes-in-component.md](05-count-nodes-in-component.md)
+6. [06-find-neighbors-of-node.md](06-find-neighbors-of-node.md)
+7. [07-check-path-exists.md](07-check-path-exists.md)
+8. [08-edge-count.md](08-edge-count.md)
+9. [09-node-degree.md](09-node-degree.md)
+10. [10-check-connected-graph.md](10-check-connected-graph.md)
+
+### 2. Connectivity & Cycle Detection (11-20)
+11. [11-count-connected-components.md](11-count-connected-components.md)
+12. [12-cycle-detect-undirected.md](12-cycle-detect-undirected.md)
+13. [13-cycle-detect-directed.md](13-cycle-detect-directed.md)
+14. [14-bipartite-check.md](14-bipartite-check.md)
+15. [15-flood-fill-graph.md](15-flood-fill-graph.md)
+16. [16-shortest-path-unweighted.md](16-shortest-path-unweighted.md)
+17. [17-find-all-paths.md](17-find-all-paths.md)
+18. [18-transitive-closure.md](18-transitive-closure.md)
+19. [19-mother-vertex.md](19-mother-vertex.md)
+20. [20-k-cores.md](20-k-cores.md)
+
+### 3. Topological Sorting & DAGs (21-30)
+21. [21-topological-sort-dfs.md](21-topological-sort-dfs.md)
+22. [22-topological-sort-kahns.md](22-topological-sort-kahns.md)
+23. [23-check-dag.md](23-check-dag.md)
+24. [24-longest-path-dag.md](24-longest-path-dag.md)
+25. [25-course-schedule-logic.md](25-course-schedule-logic.md)
+26. [26-all-ancestors-dag.md](26-all-ancestors-dag.md)
+27. [27-strongly-connected-kosaraju.md](27-strongly-connected-kosaraju.md)
+28. [28-strongly-connected-tarjan.md](28-strongly-connected-tarjan.md)
+29. [29-articulation-points.md](29-articulation-points.md)
+30. [30-bridges-in-graph.md](30-bridges-in-graph.md)
+
+### 4. Shortest Paths & Optimization (31-40)
+31. [31-dijkstra-algorithm.md](31-dijkstra-algorithm.md)
+32. [32-bellman-ford.md](32-bellman-ford.md)
+33. [33-floyd-warshall.md](33-floyd-warshall.md)
+34. [34-johnsons-algorithm.md](34-johnsons-algorithm.md)
+35. [35-negative-cycle-detection.md](35-negative-cycle-detection.md)
+36. [36-dial-algorithm.md](36-dial-algorithm.md)
+37. [37-cheapest-flights-k-stops.md](37-cheapest-flights-k-stops.md)
+38. [38-network-delay-time.md](38-network-delay-time.md)
+39. [39-min-cost-connect-points.md](39-min-cost-connect-points.md)
+40. [40-path-with-max-probability.md](40-path-with-max-probability.md)
+
+### 5. Spanning Trees & Advanced Sets (41-50)
+41. [41-kruskal-algorithm.md](41-kruskal-algorithm.md)
+42. [42-prim-algorithm.md](42-prim-algorithm.md)
+43. [43-dsu-union-find.md](43-dsu-union-find.md)
+44. [44-dsu-path-compression.md](44-dsu-path-compression.md)
+45. [45-redundant-connection.md](45-redundant-connection.md)
+46. [46-eulerian-path-circuit.md](46-eulerian-path-circuit.md)
+47. [47-hamiltonian-path-basics.md](47-hamiltonian-path-basics.md)
+48. [48-bipartite-matching.md](48-bipartite-matching.md)
+49. [49-min-cut-max-flow.md](49-min-cut-max-flow.md)
+50. [50-a-star-intro.md](50-a-star-intro.md)

@@ -1,0 +1,85 @@
+# 🧭 Python Mastery Roadmap: Chronological (v1)
+
+This roadmap lists the 53 universal milestones in order of execution. For a tiered version, see [Overview V2 (Tiered)](./overview-v2.md).
+
+---
+
+## 🛠️ Phase 1: Setup & Lexical Foundation
+- [01-toolchain-installation.md](./setup/01-toolchain.md)
+- [02-compilation-run-basics.md](./setup/02-compile-run.md)
+- [03-charset.md](./03-charset.md)
+- [04-tokens-lexemes.md](./04-tokens-lexemes.md)
+- [05-keywords-standards.md](./05-keywords-standards.md)
+- [06-tuning-strictness.md](./06-tuning-strictness.md)
+- [07-comments-metadata.md](./07-comments-metadata.md)
+
+## 📦 Phase 2: Data & Variables
+- [08-variables-constants.md](./08-variables-constants.md)
+- [09-data-types.md](./09-data-types.md)
+    - [Integers](./data-type/integers.md)
+    - [Floats](./data-type/floats.md)
+    - [Booleans](./data-type/booleans.md)
+    - [Special Types](./data-type/none-type.md)
+- [10-string-escaping.md](./10-string-escaping.md)
+- [11-interpolation.md](./11-interpolation.md)
+- [12-scope-lifetime.md](./12-scope-lifetime.md)
+- [13-storage-classes.md](./13-storage-classes.md)
+- [14-native-strings.md](./14-native-strings.md)
+
+## ⚙️ Phase 3: Logic & Control
+- [15-pattern-matching.md](./15-pattern-matching.md)
+- [16-syntactic-automation.md](./16-syntactic-automation.md)
+- [17-operators.md](./17-operators.md)
+    - [Math](./operator/math.md)
+    - [Bitwise](./operator/bitwise.md)
+- [18-precedence-associativity.md](./18-precedence-associativity.md)
+- [19-expressions-statements.md](./19-expressions-statements.md)
+- [20-command-substitution.md](./20-command-substitution.md) (N/A)
+- [21-type-casting.md](./21-type-casting.md)
+- [22-truth-rule.md](./22-truth-rule.md)
+- [23-conditionals.md](./22-conditionals.md)
+    - [If Expression](./control/if.md)
+    - [Match Expression](./control/match.md)
+- [24-iteration-definite.md](./23-iteration-definite.md)
+- [25-iteration-indefinite.md](./24-iteration-indefinite.md)
+- [26-jump-statements.md](./25-jump-statements.md)
+
+## 🏗️ Phase 4: Functions & Procedural
+- [27-function-basics.md](./26-function-basics.md)
+- [28-return-types.md](./27-return-types.md)
+- [29-recursion.md](./28-recursion.md)
+- [30-passing-mechanisms.md](./29-passing-mechanisms.md)
+- [31-closures-lambdas.md](./30-closures-lambdas.md)
+
+## 🏢 Phase 5: Architecture & Data Structures
+- [32-sequential-collections.md](./31-sequential-collections.md)
+    - [Lists](./array/lists.md)
+    - [Tuples](./array/tuples.md)
+- [33-associative-collections.md](./32-associative-collections.md)
+- [34-structs-base.md](./33-structs-base.md)
+- [35-class-concept.md](./35-class-concept.md)
+- [36-io-streams.md](./36-io-streams.md)
+
+## 🚀 Phase 6: Advanced & Systems
+- [37-procedural-mechanisms.md](./procedural/00-start.md)
+    - [Modules](./procedural/modules.md)
+    - [Packages](./procedural/packages.md)
+- [38-advanced-oop.md](./oop/00-start.md)
+    - [Inheritance](./oop/inheritance.md)
+    - [Abstract Classes](./oop/abstract-classes.md)
+    - [Mixins & MRO](./oop/mixins.md)
+- [39-process-forking.md](./concurrency/01-forking.md)
+- [40-multi-threading.md](./concurrency/02-threads.md)
+- [41-async-coroutines.md](./concurrency/03-async.md)
+- [42-synchronization-locks.md](./concurrency/04-sync.md)
+- [43-exit-codes-signals.md](./39-exit-codes-signals.md)
+- [44-memory-management.md](./memory/00-start.md)
+- [45-stack-heap.md](./memory/stack-heap.md)
+- [46-memory-allocation.md](./memory/allocation.md)
+- [47-pointer-mastery.md](./41-pointer-mastery.md)
+- [48-socket-basics.md](./network/01-sockets.md)
+- [49-tcp-udp-patterns.md](./network/02-protocols.md)
+- [50-http-client-api.md](./network/03-http.md)
+- [51-multi-file-projects.md](./build/00-start.md)
+- [52-build-tools.md](./build/01-tools.md)
+- [53-standard-library.md](./45-standard-library.md)

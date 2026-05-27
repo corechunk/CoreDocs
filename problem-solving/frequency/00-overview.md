@@ -1,0 +1,67 @@
+# 🧭 Frequency & Mapping: 50-Problem Roadmap
+
+Tracking counts, finding relationships, and optimizing searches are the most common tasks in software engineering. This roadmap takes you from simple frequency arrays to complex hashing strategies.
+
+---
+
+## 🗺️ The Roadmap
+
+### 1. Frequency Foundations (1-10)
+1. [01-frequency-each-element.md](01-frequency-each-element.md)
+2. [02-find-duplicates-freq.md](02-find-duplicates-freq.md)
+3. [03-find-unique-element.md](03-find-unique-element.md)
+4. [04-intersection-two-arrays.md](04-intersection-two-arrays.md)
+5. [05-union-two-arrays.md](05-union-two-arrays.md)
+6. [06-all-elements-unique.md](06-all-elements-unique.md)
+7. [07-find-mode-array.md](07-find-mode-array.md)
+8. [08-subset-array-check.md](08-subset-array-check.md)
+9. [09-remove-duplicates-array.md](09-remove-duplicates-array.md)
+10. [10-elements-with-frequency-k.md](10-elements-with-frequency-k.md)
+
+### 2. Mapping & Relationship Logic (11-20)
+11. [11-pair-sum-exists.md](11-pair-sum-exists.md) (Two Sum)
+12. [12-count-pairs-sum.md](12-count-pairs-sum.md)
+13. [13-pair-difference-exists.md](13-pair-difference-exists.md)
+14. [14-triplet-sum-exists.md](14-triplet-sum-exists.md)
+15. [15-first-repeating-index.md](15-first-repeating-index.md)
+16. [16-last-repeating-index.md](16-last-repeating-index.md)
+17. [17-subarray-zero-sum.md](17-subarray-zero-sum.md)
+18. [18-common-in-three-arrays.md](18-common-in-three-arrays.md)
+19. [19-missing-in-range-set.md](19-missing-in-range-set.md)
+20. [20-elements-more-than-n-k.md](20-elements-more-than-n-k.md)
+
+### 3. Frequency Sorting & Ranking (21-30)
+21. [21-sort-by-frequency.md](21-sort-by-frequency.md)
+22. [22-top-k-frequent.md](22-top-k-frequent.md)
+23. [23-sort-string-frequency.md](23-sort-string-frequency.md)
+24. [24-kth-most-frequent.md](24-kth-most-frequent.md)
+25. [25-relative-sort-order.md](25-relative-sort-order.md)
+26. [26-rank-transform-array.md](26-rank-transform-array.md)
+27. [27-char-frequency-sentence.md](27-char-frequency-sentence.md)
+28. [28-group-by-frequency.md](28-group-by-frequency.md)
+29. [29-first-non-repeating-map.md](29-first-non-repeating-map.md)
+30. [30-distinct-in-window.md](30-distinct-in-window.md)
+
+### 4. Advanced Hashing Strategies (31-40)
+31. [31-duplicates-within-distance-k.md](31-duplicates-within-distance-k.md)
+32. [32-continuous-subarray-sum.md](32-continuous-subarray-sum.md)
+33. [33-longest-consecutive-seq.md](33-longest-consecutive-seq.md)
+34. [34-count-subarrays-sum-k.md](34-count-subarrays-sum-k.md)
+35. [35-smallest-window-all-chars.md](35-smallest-window-all-chars.md)
+36. [36-isomorphic-strings-map.md](36-isomorphic-strings-map.md)
+37. [37-word-pattern-check.md](37-word-pattern-check.md)
+38. [38-find-all-anagrams.md](38-find-all-anagrams.md)
+39. [39-subarray-max-sum-map.md](39-subarray-max-sum-map.md)
+40. [40-grouping-similar-items.md](40-grouping-similar-items.md)
+
+### 5. Complex Applied Logic (41-50)
+41. [41-lru-cache-basics.md](41-lru-cache-basics.md)
+42. [42-frequency-compression.md](42-frequency-compression.md)
+43. [43-random-pick-weight.md](43-random-pick-weight.md)
+44. [44-sparse-data-mapping.md](44-sparse-data-mapping.md)
+45. [45-triplets-with-sum-zero.md](45-triplets-with-sum-zero.md)
+46. [46-subarray-equal-zeros-ones.md](46-subarray-equal-zeros-ones.md)
+47. [47-longest-palindrome-built.md](47-longest-palindrome-built.md)
+48. [48-divide-into-pairs-of-k.md](48-divide-into-pairs-of-k.md)
+49. [49-pairs-abs-difference-k.md](49-pairs-abs-difference-k.md)
+50. [50-mode-of-stream-data.md](50-mode-of-stream-data.md)
