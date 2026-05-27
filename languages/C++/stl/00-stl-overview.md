@@ -9,10 +9,15 @@ The **Standard Template Library (STL)** is a powerful collection of generic clas
 
 | Pillar | Purpose | Key Elements |
 | :--- | :--- | :--- |
-| **Containers** | Data Storage | `vector`, `list`, `map`, `set`, `unordered_map` |
-| **Algorithms** | Data Processing | `sort`, `find`, `transform`, `accumulate` |
-| **Iterators** | The "Glue" | `begin()`, `end()`, `advance()`, `next()` |
-| **Functors/Lambdas** | Custom Logic | Function objects, `[](){}` lambdas |
+| **Containers** | Data Storage | `vector`, `map`, `unordered`, `stack` |
+| **Algorithms** | Data Processing | `sort`, `ranges`, `execution::par` |
+| **Iterators** | The "Glue" | `begin()`, `end()`, `ranges::sentinel` |
+| **Functional** | Logic Injection | Lambdas, `std::function`, `std::bind` |
+| **Smart Pointers** | Ownership | `unique_ptr`, `shared_ptr`, `weak_ptr` |
+| **Views & Spans** | Fast Access | `std::span`, `std::string_view` |
+| **Vocabulary** | Logic Safety | `optional`, `variant`, `expected` |
+| **Concurrency** | Parallelism | `jthread`, `atomic`, `mutex`, `promise` |
+| **Utilities** | Helper Tools | `pair`, `tuple`, `bitset`, `filesystem` |
 
 ---
 
@@ -81,12 +86,36 @@ int main() {
 ---
 
 ## 🔗 Sub-Topics (The STL Spoke Files)
-- [Containers (Sequential)](01-sequential-containers.md) - `vector`, `deque`, `list`.
-- [Containers (Associative)](02-associative-containers.md) - `map`, `set`, `unordered`.
-- [Iterators Deep-Dive](03-iterators.md) - Input, Output, Forward, Bidirectional, Random.
-- [Algorithm Engine](04-algorithms.md) - Search, Sort, Modifying, Numeric.
-- [Lambdas & Functors](05-functional.md) - Captures, Mutable, Projections.
-- [Specialized Containers](bitset.md) - `bitset`, `multi` versions.
+## 🔗 Sub-Topics (The STL Master Map)
+
+### 1. Containers & Adapters
+- [Sequential Containers](01-sequential-containers.md) - `vector`, `deque`, `list`, `array`.
+- [Associative Containers](02-associative-containers.md) - `map`, `set`, `unordered`, `multi`.
+- [Container Adapters](stack.md) - `stack`, `queue`, `priority_queue`.
+
+### 2. Algorithms & Iterators
+- [Algorithm Engine](04-algorithms.md) - Search, Sort, Ranges, Complexity.
+- [Iterators Deep-Dive](03-iterators.md) - Categories, Invalidation, Sentinels.
+
+### 3. Functional & Logic
+- [Functional C++](05-functional.md) - Lambdas, `std::function`, Bind expressions.
+
+### 4. Memory & Ownership
+- [Smart Pointers](smart-pointers.md) - `unique_ptr`, `shared_ptr`, `weak_ptr`.
+- [Memory Models](../../DSA-Master-Roadmap.md) - Allocation and Cache Locality.
+
+### 5. Modern Data Access (C++17/20)
+- [Views & Spans](views-and-spans.md) - Non-owning access to ranges.
+
+### 6. Safety & Vocabulary
+- [Vocabulary Types](vocabulary-types.md) - `optional`, `variant`, `any`, `expected`.
+
+### 7. Concurrency & Systems
+- [STL Concurrency](concurrency.md) - Threading, Atomics, Parallel Algorithms.
+- [System Utilities](system-utils.md) - `filesystem`, `chrono`, `regex`.
+
+### 8. Specialized Tools
+- [Specialized Containers](bitset.md) - `bitset`.
 - [Utility Structures](utility-containers.md) - `pair`, `tuple`.
 
 [➔ Back to C++ Hub](../master-cpp.md) | [➔ Back to Roadmap](../../DSA-Master-Roadmap.md)
