@@ -11,6 +11,7 @@ Welcome to the **Quantum Domain CoreDocs**. This is the central hub for all tech
 
 ### 1. 💻 [Programming Languages](./languages/LANGUAGE.md)
 The core language wikis (Bash, C, C++, Kotlin, Lua, Python, Pwsh) following the **CoreChunk Protocol**. Includes chronological roadmaps and tiered mastery guides.
+*   📜 [**Official Docs Index**](./Necessary-Repos/official-docs-index.md) — The ultimate "Source of Truth" for core languages (ISO, Manuals).
 *   🚀 [**C++ STL Hub**](./languages/C++/stl/00-stl-overview.md) — Direct access to STL Containers & Algorithms documentation.
 
 ### 2. 🧠 [Problem Solving Hub](./problem-solving/README.md)
@@ -21,8 +22,5 @@ Deep dive into the Java ecosystem, including the Java Standard Library, Kotlin d
 
 ### 4. 📊 [DSA Mastery](./DSA%20solving%20series/README.md)
 Data Structures and Algorithms implementation roadmap. From basic Stacks to advanced Dynamic Programming.
-
-### 5. 📜 [Official Docs Index](./Necessary-Repos/official-docs-index.md)
-The ultimate "Source of Truth" library. Direct links to ISO standards, official manuals, and API references for all core languages.
 
 ---
