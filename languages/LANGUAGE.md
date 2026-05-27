@@ -20,6 +20,7 @@ Welcome to the central repository for automation scripts, systems programming, a
 ![Target](https://img.shields.io/badge/Target-Console-orange?style=flat-square) ![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat-square&logo=windows11&logoColor=white) ![macOS](https://img.shields.io/badge/macOS-000000?style=flat-square&logo=apple&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 * [C++ Overview](./C++/overview.md) — Chronological reference script detailing environmental baselines and utility commands.
 * [C++ Categorized Suite](./C++/overview-v2.md) — Beginner-friendly guide grouping core fundamentals, with advanced topics at the end.
+* [**C++ STL Hub**](./C++/stl/00-stl-overview.md) — Deep-dive into Containers, Algorithms, and Iterators (Legacy vs. Modern).
 ---
 ## 💜 Kotlin
 ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![Compiler](https://img.shields.io/badge/Compiler-Kotlin%202.x-blue?style=flat-square)

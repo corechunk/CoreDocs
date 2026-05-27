@@ -8,6 +8,7 @@ Welcome to the **Quantum Domain CoreDocs**. This is the central hub for all tech
 
 ### 1. 💻 [Programming Languages](./languages/LANGUAGE.md)
 The core language wikis (Bash, C, C++, Kotlin, Lua, Python, Pwsh) following the **CoreChunk Protocol**. Includes chronological roadmaps and tiered mastery guides.
+*   🚀 [**C++ STL Hub**](./languages/C++/stl/00-stl-overview.md) — Direct access to STL Containers & Algorithms documentation.
 
 ### 2. 🧠 [Problem Solving Hub](./problem-solving/README.md)
 A training ground of 300+ logical challenges across Grids, Trees, Graphs, and Mathematical domains.
