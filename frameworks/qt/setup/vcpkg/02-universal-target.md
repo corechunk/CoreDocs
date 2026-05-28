@@ -29,4 +29,4 @@ cmake -B build-android \
 
 ---
 
-[➔ Back to Roadmap](../../usage/core/00-roadmap.md)
+[➔ Back to Setup Hub](../README.md)

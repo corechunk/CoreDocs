@@ -35,4 +35,4 @@ Inside the shell, `qtbase`, `moc`, and `uic` are all correctly mapped to your `$
 
 ---
 
-[➔ Back to Roadmap](../../usage/core/00-roadmap.md)
+[➔ Back to Setup Hub](../README.md)

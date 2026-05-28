@@ -35,4 +35,4 @@ target_link_libraries(StandardQtApp PRIVATE Qt6::Widgets)
 
 ---
 
-[➔ Back to Roadmap](../../usage/core/00-roadmap.md)
+[➔ Back to Setup Hub](../README.md)
