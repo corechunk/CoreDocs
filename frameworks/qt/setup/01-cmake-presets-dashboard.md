@@ -1,31 +1,39 @@
 # 🎛️ The Dashboard: CMake Presets
 
-This is the **"Plug & Play"** heart of your project. `CMakePresets.json` allows you to switch between Windows, Android, and iOS targets without changing a single command.
+This is the **"Physical Switch"** of your project. `CMakePresets.json` maps your high-level intent (e.g., "Build for Android") to the specific technical requirements (Triplets, SDK paths, Toolchains).
 
 ---
 
 ## 1. 🧱 The Workflow
-You define **Configure Presets** (for the SDKs) and **Build Presets** (for the compilers).
+1.  **Librarian (vcpkg):** Downloads the libraries.
+2.  **Hardware (NDK/SDK):** You provide the path to where you downloaded the NDK.
+3.  **The Switch (Presets):** Connects the two.
 
-## 2. 📝 Example Dashboard (`CMakePresets.json`)
+---
+
+## 📝 2. Example: One Dashboard, Multiple Lives
+This file lives in your **Project Root**. It allows you to "unplug" the Desktop environment and "plug in" Android without touching a single C++ line.
+
 ```json
 {
   "version": 3,
   "configurePresets": [
     {
-      "name": "windows-vcpkg",
-      "displayName": "Windows (vcpkg)",
+      "name": "desktop-vcpkg",
+      "displayName": "Linux Desktop (vcpkg)",
       "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-      "binaryDir": "${sourceDir}/build-win",
-      "cacheVariables": { "VCPKG_TARGET_TRIPLET": "x64-windows" }
+      "binaryDir": "${sourceDir}/build-desktop",
+      "cacheVariables": { "VCPKG_TARGET_TRIPLET": "x64-linux" }
     },
     {
-      "name": "android-arm64",
-      "displayName": "Android ARM64",
-      "toolchainFile": "$env{ANDROID_NDK_ROOT}/build/cmake/android.toolchain.cmake",
+      "name": "android-vcpkg",
+      "displayName": "Android ARM64 (vcpkg)",
+      "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
       "binaryDir": "${sourceDir}/build-android",
       "cacheVariables": {
-        "ANDROID_ABI": "arm64-v8a",
+        "VCPKG_TARGET_TRIPLET": "arm64-android",
+        "ANDROID_NDK_HOME": "$env{HOME}/Android/Sdk/ndk/27.2.12479018",
+        "CMAKE_SYSTEM_NAME": "Android",
         "ANDROID_PLATFORM": "android-33"
       }
     }
@@ -33,17 +41,17 @@ You define **Configure Presets** (for the SDKs) and **Build Presets** (for the c
 }
 ```
 
-## 3. 🚀 The "Plug & Play" Usage
-To build for a different target, you just change the preset name:
+## 3. 🚀 Using the Switch
+Once this file is in your root, building becomes a simple choice:
 
 ```bash
-# Build for Windows
-cmake --preset windows-vcpkg
-cmake --build --preset windows-vcpkg
+# Target: Linux Desktop
+cmake --preset desktop-vcpkg
+cmake --build --preset desktop-vcpkg
 
-# "Unplug" Windows, "Plug in" Android
-cmake --preset android-arm64
-cmake --build --preset android-arm64
+# Target: Android (Plug & Play!)
+cmake --preset android-vcpkg
+cmake --build --preset android-vcpkg
 ```
 
 ---
