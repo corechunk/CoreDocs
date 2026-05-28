@@ -1,67 +1,58 @@
 # Necessary Repos (Benchmark Index)
 
-> [!tip] **[Mastering the Art of Project Analysis](../reading-projects.md)**
-> Learn how to map and reverse-engineer professional codebases.
+> [!tip] [**🗺️ Reading Projects**](../reading-projects.md)
+> *Don't start with the code; start with the architecture.*
+> When entering a new professional codebase, reading file-by-file is the slowest path. Use this top-down strategy to map the territory first.
 
 ## 🎨 Ricing & Aesthetics
 | Repository | Stack | Benchmark Strength |
 | :--- | :--- | :--- |
-| [Caelestia (Suite)](https://github.com/caelestia-dots) | Quickshell | Elite UI; Includes [Shell](https://github.com/caelestia-dots/shell) & [Dots](https://github.com/caelestia-dots/dots). |
-| [owl4ce](https://github.com/owl4ce/dotfiles) | Openbox | Ultra-low RAM optimization (~250MB). |
-| [Juxtopposed](https://github.com/juxtopposed/Mystical-Blue-Theme) | KDE | High-fidelity glassy aesthetic & polish. |
-| [Ambxst](https://github.com/Axenide/Ambxst) | Fabric | Complex GTK widget logic & Dynamic Island. |
+| [Caelestia Suite](https://github.com/Caelestia-Suite) | Lua/Nix/Bash | High-density modularity; elite standard for Rice distribution. |
+| [Ambxst/dotfiles](https://github.com/Ambxst/dotfiles) | Nix/Hyprland | Modern NixOS orchestration and visual consistency. |
+| [Jakoolit/Hyprland-Dots](https://github.com/Jakoolit/Hyprland-Dots) | Bash/Hyprland | User-friendly script orchestration; massive community base. |
+| [owl4ce/dotfiles](https://github.com/owl4ce/dotfiles) | Openbox/Lua | Legend of the "Old School" aesthetic; perfection in manual config. |
+| [Juxtopposed](https://github.com/Juxtopposed) | Web/CSS | Front-end aesthetic mastery; UI/UX inspiration. |
 
-## 🖥️ Terminal Emulators (GPU & Performance)
+## ⚙️ Systems & Terminal Tools
 | Repository | Stack | Benchmark Strength |
 | :--- | :--- | :--- |
-| [Ghostty](https://github.com/ghostty-org/ghostty) | Zig | **Top Tier:** Low-latency rendering & native feel (Mitchell Hashimoto). |
-| [WezTerm](https://github.com/wez/wezterm) | Rust/Lua | **Extensibility:** Highly configurable via Lua; built-in multiplexing. |
-| [Alacritty](https://github.com/alacritty/alacritty) | Rust | **Speed:** The standard for raw, GPU-accelerated minimalist performance. |
-| [Rio](https://github.com/raphamorim/rio) | Rust/WebGPU | **Modern Rendering:** Benchmarking WebGPU for terminal performance. |
-
-## 🐚 Modern Shells & CLI UX
-| Repository | Stack | Benchmark Strength |
-| :--- | :--- | :--- |
-| [Nushell](https://github.com/nushell/nushell) | Rust | **Structured Data:** Treats output as tables/objects, not strings. |
-| [Zellij](https://github.com/zellij-org/zellij) | Rust | **Multiplexing:** Modern, user-friendly alternative to tmux with WASM plugins. |
-| [Starship](https://github.com/starship/starship) | Rust | **Universal Prompt:** The fastest, most modular cross-shell prompt. |
-
-## 📝 High-Performance Editors
-| Repository | Stack | Benchmark Strength |
-| :--- | :--- | :--- |
-| [Zed](https://github.com/zed-industries/zed) | Rust | **Collaboration/Speed:** Ultra-fast startup & built-in multi-user coding. |
-| [Helix](https://github.com/helix-editor/helix) | Rust | **Modal Editing:** A post-modern modal editor (modal logic benchmark). |
-| [Lapce](https://github.com/lapce/lapce) | Rust/Druid | **Performance:** Lightning fast GUI editor with TUI-like performance. |
-
-## 🌐 Cross-Platform Desktop
-| Repository | Stack | Benchmark Strength |
-| :--- | :--- | :--- |
-| [Terax](https://github.com/crynta/terax-ai) | Rust/Tauri | Win/Mac/Lin; AI-terminal integration & performance. |
-
-## 🏗️ Desktop Infrastructure (Linux)
-| Repository | Stack | Benchmark Strength |
-| :--- | :--- | :--- |
-| [JaKooLit](https://github.com/JaKooLit/Hyprland-Dots) | Bash | Multi-Distro portability & installer logic. |
-
-## 🛠️ System Maintenance
-| Repository | Stack | Benchmark Strength |
-| :--- | :--- | :--- |
-| [linutil](https://github.com/ChrisTitusTech/linutil) | Rust/Shell | Distro-agnostic Linux toolbox & optimizations. |
-| [winutil](https://github.com/ChrisTitusTech/winutil) | PowerShell | The "Gold Standard" for Windows debloating. |
+| [Ghostty](https://github.com/ghostty-org/ghostty) | Zig | Performance-first terminal architecture; elite Zig usage. |
+| [Zed](https://github.com/zed-industries/zed) | Rust | GPUI rendering engine; benchmarks for high-performance Rust UI. |
+| [Nushell](https://github.com/nushell/nushell) | Rust | Re-imagining the shell; benchmark for CLI data handling. |
+| [ChrisTitusTech/linutil](https://github.com/ChrisTitusTech/linutil) | Rust | Large-scale tool distribution; benchmark for multi-distro support. |
+| [Terax](https://github.com/terax-org) | Rust/Tauri | Cross-platform systems tools; high-polished desktop integration. |
 
 ---
 
 ## 🚧 Under-Development (Watchlist)
-| Repository                                        | Developer | Purpose / Signal                        |
-| :------------------------------------------------ | :-------- | :-------------------------------------- |
-| [seashell](https://github.com/bashbunni/seashell) | bashbanni | New experimental shell-related project. |
+| Name (Nick) | Repository | Purpose / Signal |
+| :--- | :--- | :--- |
+| **Michael Paulson (Prime)** | [ThePrimeagen/99](https://github.com/ThePrimeagen/99) | Neovim AI Agent (Agentic workflow, surgical edits). |
+| **TJ DeVries (teej)** | [tjdevries/OhtML](https://github.com/tjdevries/OhtML) | OCaml SaaS framework (Oatmeal) + HTMX integration. |
+| **Bash (bashbunni)** | [bashbunni/seashell](https://github.com/bashbunni/seashell) | Custom shell (REPL) from scratch in Rust/Go. |
+| **Chris Bautista (trash)** | [bautistaaa/big-sir](https://github.com/bautistaaa/big-sir) | Experimental opinionated TypeScript framework. |
+| **Casey Muratori (casey)** | [cmuratori/computer_enhance](https://github.com/cmuratori/computer_enhance) | Performance-Aware Programming reference code. |
+| **Teddy Pender (tspding)** | [teddyjfpender/motomon](https://github.com/teddyjfpender/motomon) | Modular autonomous world game using zkVM. |
 
 ---
 
-## 🎯 Architectural Targets
-- **Ghostty/WezTerm:** Benchmark for GPU rendering and terminal input handling.
-- **Nushell:** Inspiration for structured output in `linutils` or future tools.
-- **Quickshell:** Reference for the QML Command Palette project.
-- **Tauri:** Performance benchmark for future Rust-based systems tools (like `Terax`).
+## 🏆 Finished / Benchmark Projects
+| Name (Nick) | Repository | Achievement / Benchmark |
+| :--- | :--- | :--- |
+| **Michael Paulson (Prime)** | [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon) | High-speed file navigation; industry-standard workflow tool. |
+| **TJ DeVries (teej)** | [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | The definitive fuzzy finder for Neovim; massive extensibility. |
+| **Bash (bashbunni)** | [bashbunni/measured](https://github.com/bashbunni/measured) | High-signal Rust metrics tool; transition milestone from Go. |
+| **Chris Bautista (trash)** | [typehero/typehero](https://github.com/typehero/typehero) | Community platform for TypeScript mastery; high-polished UI. |
+| **Casey Muratori (casey)** | [cmuratori/refterm](https://github.com/cmuratori/refterm) | Reference terminal renderer; set the bar for terminal performance. |
+| **Teddy Pender (tspding)** | [teddyjfpender/skill-issues](https://github.com/teddyjfpender/skill-issues) | Multi-stage AI code evaluation system for production quality. |
 
 ---
+
+## 🛠️ Internal "Anvil" Projects
+| Repository | Status | Goal |
+| :--- | :--- | :--- |
+| `linutils` | Active | Global system optimization and tool management. |
+| `dotfiles.sh` v2 | Planning | Matrix/Scout based Rice orchestrator. |
+| `qml-command-palette` | MVP | Customaction-centric panel with fzf integration. |
+
+[➔ Back to Master README](../README.md)

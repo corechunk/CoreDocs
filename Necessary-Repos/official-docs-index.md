@@ -1,7 +1,8 @@
 # 📜 Official Documentation Index (The Sources of Truth)
 
-> [!tip] [**Mastering the Art of Technical Reading**](../reading-docs.md)
-> Learn how to distill raw documentation into actionable engineering signals.
+> [!tip] [**🏗️ Reading Documentation**](../reading-docs.md)
+> *Stop reading like a book; read like a Lawyer.*
+> Professional documentation is not meant to be read cover-to-cover. It is a technical reference meant to be queried for specific "Contractual" guarantees.
 
 This is a high-signal index linking directly to the definitive official documentation, standards, and manuals for the core languages in this vault. Use these when the "distilled" wiki requires raw technical verification.
 
