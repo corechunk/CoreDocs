@@ -11,6 +11,28 @@
 | [Juxtopposed](https://github.com/juxtopposed/Mystical-Blue-Theme) | KDE | High-fidelity glassy aesthetic & polish. |
 | [Ambxst](https://github.com/Axenide/Ambxst) | Fabric | Complex GTK widget logic & Dynamic Island. |
 
+## 🖥️ Terminal Emulators (GPU & Performance)
+| Repository | Stack | Benchmark Strength |
+| :--- | :--- | :--- |
+| [Ghostty](https://github.com/ghostty-org/ghostty) | Zig | **Top Tier:** Low-latency rendering & native feel (Mitchell Hashimoto). |
+| [WezTerm](https://github.com/wez/wezterm) | Rust/Lua | **Extensibility:** Highly configurable via Lua; built-in multiplexing. |
+| [Alacritty](https://github.com/alacritty/alacritty) | Rust | **Speed:** The standard for raw, GPU-accelerated minimalist performance. |
+| [Rio](https://github.com/raphamorim/rio) | Rust/WebGPU | **Modern Rendering:** Benchmarking WebGPU for terminal performance. |
+
+## 🐚 Modern Shells & CLI UX
+| Repository | Stack | Benchmark Strength |
+| :--- | :--- | :--- |
+| [Nushell](https://github.com/nushell/nushell) | Rust | **Structured Data:** Treats output as tables/objects, not strings. |
+| [Zellij](https://github.com/zellij-org/zellij) | Rust | **Multiplexing:** Modern, user-friendly alternative to tmux with WASM plugins. |
+| [Starship](https://github.com/starship/starship) | Rust | **Universal Prompt:** The fastest, most modular cross-shell prompt. |
+
+## 📝 High-Performance Editors
+| Repository | Stack | Benchmark Strength |
+| :--- | :--- | :--- |
+| [Zed](https://github.com/zed-industries/zed) | Rust | **Collaboration/Speed:** Ultra-fast startup & built-in multi-user coding. |
+| [Helix](https://github.com/helix-editor/helix) | Rust | **Modal Editing:** A post-modern modal editor (modal logic benchmark). |
+| [Lapce](https://github.com/lapce/lapce) | Rust/Druid | **Performance:** Lightning fast GUI editor with TUI-like performance. |
+
 ## 🌐 Cross-Platform Desktop
 | Repository | Stack | Benchmark Strength |
 | :--- | :--- | :--- |
@@ -29,12 +51,17 @@
 
 ---
 
-## 🎯 Architectural Targets
-- **Quickshell:** Reference for the QML Command Palette project.
-- **Portability:** Adapting JaKooLit installer logic for `dotfiles.sh` v2.
-- **Tauri:** Performance benchmark for future Rust-based systems tools.
-- **Density:** Modeling `linutils` TUI after CTT's functional logic.
+## 🚧 Under-Development (Watchlist)
+| Repository                                        | Developer | Purpose / Signal                        |
+| :------------------------------------------------ | :-------- | :-------------------------------------- |
+| [seashell](https://github.com/bashbunni/seashell) | bashbanni | New experimental shell-related project. |
 
 ---
 
-[➔ View Under-Dev Watchlist](./under-dev-repos.md)
+## 🎯 Architectural Targets
+- **Ghostty/WezTerm:** Benchmark for GPU rendering and terminal input handling.
+- **Nushell:** Inspiration for structured output in `linutils` or future tools.
+- **Quickshell:** Reference for the QML Command Palette project.
+- **Tauri:** Performance benchmark for future Rust-based systems tools (like `Terax`).
+
+---
