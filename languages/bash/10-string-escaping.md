@@ -27,3 +27,7 @@ echo 'No $VAR expansion'   # Single quotes: Absolute safety
 # sequences before the string is ever handed to the expansion 
 # engine. Single quotes disable the expansion engine entirely.
 ```
+
+---
+*See also: [Terminal Physics & ANSI Escapes](../../OS/Linux/Terminal/ANSI-Escapes.md)*
+

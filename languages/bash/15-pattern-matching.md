@@ -30,3 +30,25 @@ fi
 # Logic: Bash uses the system's regex.h library. Match results 
 # for capturing groups are stored in the BASH_REMATCH array.
 ```
+
+### 3. Native Regex Breakdown (=~)
+The `=~` operator allows for direct pattern testing within `[[ ]]`.
+
+#### The Anatomy of `[[ $var =~ ^[0-9]+$ ]]`
+- **`^`** (Caret): Start of string anchor.
+- **`$`** (Dollar): End of string anchor.
+- **`[ ]`** (Brackets): Character class (set of allowed characters).
+    - `[0-9]` : Any digit.
+    - `[a-z]` : Any lowercase letter.
+- **`+`** (Plus): Quantifier - "One or more".
+- **`*`** (Asterisk): Quantifier - "Zero or more".
+- **`?`** (Question): Quantifier - "Zero or one" (Optional).
+
+| Example | Matches | Logic |
+| :--- | :--- | :--- |
+| `^[0-9]+$` | "123", "7" | Numeric only, start-to-finish. |
+| `^[0-9]$` | "5", "0" | **Exactly one** digit. |
+| `^[a-zA-Z]+$`| "Hello" | Alphabetic only. |
+
+**Pro Tip**: Do **not** quote the regex pattern on the right side if you want it to behave as a regex.
+

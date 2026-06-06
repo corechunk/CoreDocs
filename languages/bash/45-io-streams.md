@@ -24,3 +24,7 @@ read -u 0 data              # Explicitly read from stdin (0)
 # Logic: Redirection operators (>&) allow you to swap the destination 
 # of a process's mouth or ear before the code executes.
 ```
+
+---
+*See also: [Standard I/O Streams](../../OS/Linux/Core/Standard-Streams.md)*
+

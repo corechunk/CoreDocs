@@ -33,3 +33,28 @@ echo $x                     # Logic: x is now "new_value"
 # Any access to 'ref' triggers a secondary lookup for the target 
 # variable name.
 ```
+
+### 3. Flag Parsing (The Conveyor Belt)
+For professional CLIs, non-positional arguments (flags) are preferred over strictly ordered arguments.
+
+```bash
+# EXPLICIT: while/shift pattern
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -m|--mode)
+            install_mode="$2"
+            shift 2 # Consume flag AND value
+            ;;
+        install|update)
+            ACTION="$1"
+            shift # Consume only the command
+            ;;
+        *)
+            echo "Unknown: $1"; exit 1 ;;
+    esac
+done
+
+# Logic: $@ is treated as a stack. 'shift' pops the top item 
+# off, moving the next item to index $1.
+```
+

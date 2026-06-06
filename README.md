@@ -34,3 +34,8 @@ High-level application frameworks and universal cross-platform delivery systems.
 *   🦀 [**Tauri & Rust Systems**](./frameworks/tauri/README.md) — High-performance, lightweight desktop applications.
 
 ---
+
+### 8. 🖥️ [**Operating Systems**](./OS/README.md)
+Platform-specific internals, terminal physics, and kernel-level abstractions.
+*   🐧 [**Linux Hub**](./OS/Linux/README.md) — Terminal dynamics, ANSI Engine, and Standard Streams.
+*   🪟 [**Windows & Git-Bash**](./OS/Windows/README.md) — Cross-platform environment quirks and MSYS2 logic.

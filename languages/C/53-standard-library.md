@@ -36,3 +36,7 @@ int main() {
 
 # The Logic Bridge
 // Logic: The Standard Library is actually a pre-compiled binary provided by your OS (like `glibc` on Linux). When you include a header, you are only importing the "Menu" (declarations); the Linker provides the actual "Food" (implementations) from the system's shared library.
+
+---
+*See also: [Libc Implementations](../../OS/Linux/Core/Libc-Implementations.md)*
+

@@ -12,6 +12,8 @@
 | [Jakoolit/Hyprland-Dots](https://github.com/Jakoolit/Hyprland-Dots) | Bash/Hyprland | User-friendly script orchestration; massive community base. |
 | [owl4ce/dotfiles](https://github.com/owl4ce/dotfiles) | Openbox/Lua | Legend of the "Old School" aesthetic; perfection in manual config. |
 | [Juxtopposed](https://github.com/Juxtopposed) | Web/CSS | Front-end aesthetic mastery; UI/UX inspiration. |
+| [qylock](https://github.com/Darkkal44/qylock) | QML/Qt6 | Unified SDDM & Quickshell lockscreen framework; elite transition aesthetics. |
+| [Gorgeous-GRUB](https://github.com/jacksaur/Gorgeous-GRUB) | Markdown/Gallery | High-signal visual reference and installation hub for GRUB themes; redirection-focused. |
 
 ## ⚙️ Systems & Terminal Tools
 | Repository | Stack | Benchmark Strength |
