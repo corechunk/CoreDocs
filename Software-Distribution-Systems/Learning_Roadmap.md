@@ -17,6 +17,7 @@ This roadmap tracks the mastery of Linux software distribution, sorted by diffic
 *   **Mechanics:** 
     *   [Core Extraction Logic](mechanisms/bash-custom-installer/Core_Logic.md)
     *   [SFX & Binary Payloads](mechanisms/bash-custom-installer/SFX_Payloads.md)
+    *   [Init System Diversification](mechanisms/bash-custom-installer/Init_Diversification.md)
     *   [Service & Init Integration](mechanisms/bash-custom-installer/Service_Integration.md)
 *   **Status:** 🔲 Not Started
 

@@ -27,6 +27,15 @@ Every POSIX-compliant shell (Bash, Zsh, Sh) is configured to automatically sourc
     fi
     ```
 
+#### ⏳ When do changes take effect?
+Unlike system services, changes to shell configuration files are **not** instantaneous. 
+
+1.  **New Sessions:** Any new terminal tab, window, or SSH login will automatically pick up the changes.
+2.  **Existing Sessions:** Current active terminals will **not** see the changes. You must manually "re-read" the config using one of the following:
+    *   `source ~/.bashrc` (or the specific file in `.d/`)
+    *   `. ~/.bashrc` (The short form of source)
+    *   `exec bash` (Restarts the bash process entirely, clearing the current environment).
+
 #### ⚙️ Technical Constraints of `.d` Folders
 When the system (or your custom loader) sources a directory, it follows specific rules:
 1.  **File Extensions:** Most system loaders (like the one in `/etc/profile`) **only** source files ending in `.sh`. Files without extensions or with `.disabled` suffixes are ignored.
