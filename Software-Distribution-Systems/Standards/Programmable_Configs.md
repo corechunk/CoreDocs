@@ -65,6 +65,7 @@ When the system (or your custom loader) sources a directory, it follows specific
 2.  **The Shebang Myth:** Since these files are **sourced** (`source file` or `. file`) and not executed as binaries, the shebang (`#!/bin/bash`) is technically ignored by the shell. However, keeping it is "best practice" for IDEs and linters to identify the language.
 3.  **Execution Order:** Files are sourced in **alphabetical order**. This is why you see prefixes like `00-path.sh` or `99-aliases.sh` to manage dependencies between scripts.
 4.  **Permissions:** Files must be **readable**, but they do **not** need to be executable (`+x`) because the parent shell is reading their content into its own memory space.
+5.  **Recursion (Is it deep?):** **NO.** By default, the `.d` mechanism is **not recursive**. The loops in `/etc/profile` or standard custom loaders only look at the top-level files in the directory. If you create a subfolder inside `/etc/profile.d/`, its contents will be ignored unless you write a specialized recursive loader.
 
 ### 2. Package Sources (`/etc/apt/sources.list.d/`)
 Rather than appending URLs to the main `/etc/apt/sources.list`, developers drop a file into this directory.
