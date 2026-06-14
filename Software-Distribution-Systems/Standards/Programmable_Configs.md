@@ -16,7 +16,9 @@ Every POSIX-compliant shell (Bash, Zsh, Sh) is configured to automatically sourc
 | **Non-Interactive** | Usually none (reads `BASH_ENV`) | Automated scripts and cron jobs. |
 
 #### 📂 The ".d" Implementation (System vs. User)
-*   **System Level (`/etc/profile.d/`):** This is the global standard. `/etc/profile` contains a loop that iterates through this folder.
+*   **System Level (`/etc/profile.d/`):** This is the global standard for **Login Shells**. `/etc/profile` contains a loop that iterates through this folder. 
+    *   **Does it hit Non-Login Shells?** Technically **No**. It is not re-sourced when you open a new terminal tab. 
+    *   **The Nuance:** Because of the **Inheritance Loop**, any `export` commands inside `/etc/profile.d/` will still be visible in your terminal tabs. However, `aliases` or `functions` defined there will be missing in non-login shells.
 *   **User Level (`~/.bashrc.d/`):** Bash does **not** provide this by default. To implement it, you must add a "Drop-in Loader" to your `~/.bashrc`:
     ```bash
     # Manually enabling .d pattern for personal configs
@@ -31,7 +33,7 @@ Every POSIX-compliant shell (Bash, Zsh, Sh) is configured to automatically sourc
 A common point of confusion is whether a **Non-Login Shell** (like a terminal tab) inherits everything from the **Login Shell**.
 
 *   **Environment Variables (`export`):** **YES.** When you log into your Desktop Environment (which is a login session), any variable you `export` in `/etc/profile` or `~/.bash_profile` is passed down to every child process (including terminal emulators and the shells inside them).
-*   **Aliases and Local Variables:** **NO.** These are not exported to child processes. This is why you must define your aliases in `~/.bashrc` (or `~/.bashrc.d/`)—so that every new non-login shell re-reads them.
+*   **Aliases and Local Variables:** **NO.** **Aliases cannot be exported.** They are local to the shell process that defined them. Even if you use `export alias...` (which is invalid syntax), it will not work. This is why you must define your aliases in `~/.bashrc` (or `~/.bashrc.d/`) so that every new non-login shell re-reads them.
 
 **The Golden Rule:** 
 - Put **Global Paths** and **Environment Variables** (e.g., `PATH`, `EDITOR`) in **Login Shell** configs.
@@ -42,9 +44,20 @@ Unlike system services, changes to shell configuration files are **not** instant
 
 1.  **New Sessions:** Any new terminal tab, window, or SSH login will automatically pick up the changes.
 2.  **Existing Sessions:** Current active terminals will **not** see the changes. You must manually "re-read" the config using one of the following:
-    *   `source ~/.bashrc` (or the specific file in `.d/`)
-    *   `. ~/.bashrc` (The short form of source)
+    *   `. ~/.bashrc` (Re-reads the main config and its children).
     *   `exec bash` (Restarts the bash process entirely, clearing the current environment).
+
+#### 🐚 Shell Command: `.` vs `source`
+When "reading" a file into the current shell memory, you will see two commands:
+*   `. filename` (The Dot)
+*   `source filename`
+
+**The Verdict:**
+*   **`.` (Dot) is the Professional Standard.** It is **POSIX-compliant**, meaning it works in every shell (Sh, Bash, Zsh, Dash, Ash). If you are writing a "Universal Installer" or a script for Alpine Linux (which uses Dash/Ash), you **must** use `.`.
+*   **`source` is a Bashism.** It is an alias for `.` provided by Bash and Zsh for better readability. It will **fail** on minimalist systems that use a strict POSIX shell.
+
+**Key Difference (The PATH Search):**
+Both commands will search your `$PATH` if the filename doesn't contain a slash. However, some shells behave differently if the file is not found in the current directory. Always use a path (e.g., `. ./config.sh` or `. /etc/profile`) to ensure the correct file is sourced.
 
 #### ⚙️ Technical Constraints of `.d` Folders
 When the system (or your custom loader) sources a directory, it follows specific rules:
@@ -72,12 +85,24 @@ Systemd allows overriding global configurations or specific service settings by 
 
 ## 🏗️ Architectural Pattern: Symlink Aliasing
 
-If you want a short command name (like `lu`) without using shell aliases, use filesystem **symbolic links**.
+For distributed software, you often want a short command (e.g., `lu`) to point to a long binary name. You have two choices: **Shell Aliases** or **Filesystem Symlinks**.
+
+### ⚖️ The Comparison: Alias vs. Symlink
+
+| Feature | Shell Alias (`alias lu='...'`) | Filesystem Symlink (`ln -s`) |
+| :--- | :--- | :--- |
+| **Scope** | Current Shell only. | System-wide (Any shell/script). |
+| **Portability** | Requires modifying `.bashrc` or `.zshrc`. | Independent of shell configuration. |
+| **Visibility** | Hidden from `which` and `whereis`. | Visible and trackable via `ls -l`. |
+| **Dependency** | Fails if the user switches to a new shell (e.g. Fish). | Works perfectly in Zsh, Bash, Dash, Python, etc. |
+
+### 🏆 The "Pro-Tier" Verdict: Symlinks Win
+For **Software Distribution**, you should **always use symlinks**. 
 
 1.  **Unique Binary Name:** `/usr/bin/linutils-core-v1`
-2.  **Short Symlink:** `/usr/local/bin/lu` -> `/usr/bin/linutils-core-v1`
+2.  **Short Symlink:** `ln -s /usr/bin/linutils-core-v1 /usr/local/bin/lu`
 
 **Why this is better:**
-*   Symlinks are binary-independent.
-*   They don't require the shell to "source" anything (faster performance).
-*   They are highly visible in a directory listing (`ls -l`).
+*   **Zero Configuration:** You don't have to touch the user's "messy" shell files.
+*   **Invisible Power:** Your tool can be called by other scripts, cron jobs, or GUI launchers that don't "know" about shell aliases.
+*   **Performance:** The OS kernel handles symlink resolution much faster than a shell interpreter parses an alias list.
