@@ -27,6 +27,16 @@ Every POSIX-compliant shell (Bash, Zsh, Sh) is configured to automatically sourc
     fi
     ```
 
+#### 🔄 The Inheritance Loop
+A common point of confusion is whether a **Non-Login Shell** (like a terminal tab) inherits everything from the **Login Shell**.
+
+*   **Environment Variables (`export`):** **YES.** When you log into your Desktop Environment (which is a login session), any variable you `export` in `/etc/profile` or `~/.bash_profile` is passed down to every child process (including terminal emulators and the shells inside them).
+*   **Aliases and Local Variables:** **NO.** These are not exported to child processes. This is why you must define your aliases in `~/.bashrc` (or `~/.bashrc.d/`)—so that every new non-login shell re-reads them.
+
+**The Golden Rule:** 
+- Put **Global Paths** and **Environment Variables** (e.g., `PATH`, `EDITOR`) in **Login Shell** configs.
+- Put **Aliases**, **Prompts (PS1)**, and **Keybindings** in **Interactive Non-Login** configs (`~/.bashrc`).
+
 #### ⏳ When do changes take effect?
 Unlike system services, changes to shell configuration files are **not** instantaneous. 
 
