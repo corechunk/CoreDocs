@@ -54,5 +54,7 @@ This roadmap tracks the mastery of Linux software distribution, sorted by diffic
 ## 📖 Foundational Standards
 *   [FHS: Binary Locations & Purposes](Standards/FHS_Mapping.md)
 *   [The ".d" Philosophy: Programmable Configurations](Standards/Programmable_Configs.md)
+*   [Bash vs. POSIX: The Installer Philosophy](Standards/Bash_vs_POSIX.md)
 *   [Dependency Strategies: The Architect vs. Caretaker](Standards/Dependency_Strategies.md)
+*   [Security Best Practices: Temporary Files](Standards/Security_Best_Practices.md)
 *   [Upstreaming: Official Approval Cycles](Approval_Cycles.md)
