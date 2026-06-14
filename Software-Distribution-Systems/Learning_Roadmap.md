@@ -16,6 +16,7 @@ This roadmap tracks the mastery of Linux software distribution, sorted by diffic
 *   **Goal:** Build a "distro-neutral" installer that works on Systemd, OpenRC, and SysVinit.
 *   **Mechanics:** 
     *   [Core Extraction Logic](mechanisms/bash-custom-installer/Core_Logic.md)
+    *   [SFX & Binary Payloads](mechanisms/bash-custom-installer/SFX_Payloads.md)
     *   [Service & Init Integration](mechanisms/bash-custom-installer/Service_Integration.md)
 *   **Status:** 🔲 Not Started
 
@@ -38,6 +39,7 @@ This roadmap tracks the mastery of Linux software distribution, sorted by diffic
     *   [Control & Metadata](mechanisms/debian-apt/Package_Metadata.md)
     *   [GUI & Desktop Specifications](mechanisms/debian-apt/GUI_Desktop_Specs.md)
     *   [Lifecycle Maintainer Scripts](mechanisms/debian-apt/Lifecycle_Hooks.md)
+    *   [Hosting Independent APT Repositories](mechanisms/debian-apt/Repository_Hosting.md)
 *   **Status:** 🔲 Not Started
 
 ---
@@ -51,4 +53,5 @@ This roadmap tracks the mastery of Linux software distribution, sorted by diffic
 ## 📖 Foundational Standards
 *   [FHS: Binary Locations & Purposes](Standards/FHS_Mapping.md)
 *   [The ".d" Philosophy: Programmable Configurations](Standards/Programmable_Configs.md)
+*   [Dependency Strategies: The Architect vs. Caretaker](Standards/Dependency_Strategies.md)
 *   [Upstreaming: Official Approval Cycles](Approval_Cycles.md)
