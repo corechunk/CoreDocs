@@ -70,6 +70,7 @@ When the system (or your custom loader) sources a directory, it follows specific
 ### 2. Package Sources (`/etc/apt/sources.list.d/`)
 Rather than appending URLs to the main `/etc/apt/sources.list`, developers drop a file into this directory.
 
+*   **Recursion:** **NO.** Like the shell, `apt` only looks for files in the top level of this directory. It ignores all subdirectories.
 *   **Traditional Format (`.list`):** A single line containing `deb [options] URL distribution components`.
 *   **Modern Format (`.sources`):** Uses the **DEB822** multi-line format (standard since Debian 12). It is more readable and supports direct inclusion of public keys via the `Signed-By` field.
 *   **Advantage:** Allows third-party tools to manage their own repository entries without touching the system's primary source list. It ensures that uninstalling a tool simply requires removing its `.sources` file.
