@@ -39,3 +39,9 @@ High-level application frameworks and universal cross-platform delivery systems.
 Platform-specific internals, terminal physics, and kernel-level abstractions.
 *   🐧 [**Linux Hub**](./OS/Linux/README.md) — Terminal dynamics, ANSI Engine, and Standard Streams.
 *   🪟 [**Windows & Git-Bash**](./OS/Windows/README.md) — Cross-platform environment quirks and MSYS2 logic.
+
+### 📦 9. [**Software Distribution Systems**](./Software-Distribution-Systems/Learning_Roadmap.md)
+The engineering of application delivery, package management internals, and universal deployment.
+*   🚀 [**The Learning Roadmap**](./Software-Distribution-Systems/Learning_Roadmap.md) — Priority-sorted path for mastering installers and official repo upstreaming.
+*   🛠️ [**Universal Packaging Mechanisms**](./Software-Distribution-Systems/mechanisms/) — Technical blueprints for `.deb`, `.pkg`, AppImage, and Custom SFX.
+*   🏛️ [**FHS & Standards**](./Software-Distribution-Systems/Standards/FHS_Mapping.md) — Global filesystem laws and the programmable ".d" philosophy.
