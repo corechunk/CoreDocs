@@ -37,7 +37,9 @@ This roadmap groups the 53 universal C topics by **Mastery Tier**. Numbering ins
     - [fixed-width.md](./data-type/fixed-width.md)
     - [special-types.md](./data-type/special-types.md)
 - [06-string-escaping.md](./10-string-escaping.md)
-- [07-interpolation.md](./11-interpolation.md)
+- [07-string-formatting-io.md](./11-string-formatting-io.md) (Conceptual Hub)
+    - [anatomy.md](./io/anatomy.md)
+    - [fixed-width-specifiers.md](./io/fixed-width-specifiers.md)
 - [08-scope-lifetime.md](./12-scope-lifetime.md)
 
 ### Logic & Control
@@ -63,10 +65,11 @@ This roadmap groups the 53 universal C topics by **Mastery Tier**. Numbering ins
 - [04-passing-mechanisms.md](./30-passing-mechanisms.md)
 
 ### Architecture & Environment
-- [01-sequential-collections.md](./32-sequential-collections.md) (Conceptual Hub)
+- [01-arrays.md](./32-arrays.md) (Conceptual Hub)
     - [fixed.md](./array/fixed.md)
     - [vla.md](./array/vla.md)
     - [multidim.md](./array/multidim.md)
+    - [pointer-decay.md](./array/pointer-decay.md)
 - [02-associative-collections.md](./33-associative-collections.md)
 - [03-structs-base.md](./34-structs-base.md)
     - [Procedural Mechanisms](./procedural/35-procedural-mechanisms.md)
@@ -82,7 +85,11 @@ This roadmap groups the 53 universal C topics by **Mastery Tier**. Numbering ins
 
 ### Efficiency & Native Power
 - [01-tuning-strictness.md](./06-tuning-strictness.md)
-- [02-native-strings.md](./14-native-strings.md)
+- [02-string-handling.md](./14-string-handling.md) (Conceptual Hub)
+    - [declarations.md](./string/declarations.md)
+    - [modification.md](./string/modification.md)
+    - [input-methods.md](./string/input-methods.md)
+    - [copy-write-methods.md](./string/copy-write-methods.md)
 - [03-pattern-matching.md](./15-pattern-matching.md)
 - [04-command-substitution.md](./20-command-substitution.md)
 - [05-jump-statements.md](./26-jump-statements.md)

@@ -92,3 +92,20 @@ Once you have your `installer.sh` and your application folder `dist/`, run these
     ```bash
     if [ ! -w "$PREFIX" ]; then echo "Error: No write access to $PREFIX"; exit 1; fi
     ```
+
+## ⚔️ Collision & Conflict Resolution
+
+A professional installer must manage the scenario where the application already exists in a different part of the system.
+
+### 1. Detection Phase
+The installer should audit all standard FHS locations (`/usr/bin`, `/usr/local/bin`, `~/.local/bin`, etc.) before presenting the target choice.
+
+### 2. Decision Logic
+*   **Overwrite:** If the existing binary is at the *same* path as the selected target.
+*   **Shadowing Conflict:** If an existing binary is in a path with *higher* precedence than the selected target (e.g., existing in `/usr/bin` while installing to `/usr/local/bin`).
+
+### 3. The "Confirm-to-Delete" Workflow
+When a conflict is found in a location other than the target, the installer should:
+1.  **Warn:** Display a caution message listing the conflicting paths.
+2.  **Opt-in:** Ask the user if they want to remove the conflicting instances.
+3.  **Validate:** Require the user to type "confirm" literally before executing `rm -f`.

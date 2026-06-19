@@ -63,3 +63,24 @@ There is a tiny, but fatal, window of time between `mkdir` and `chmod`.
 3.  Your script continues, believing the directory is secure, while the attacker now has control.
 
 **`mktemp` is superior because it is atomic.** It creates the directory **and** sets the permissions in a single operation that the OS kernel guarantees cannot be interrupted. In systems engineering, **if a tool exists to handle atomicity, use it.**
+
+## 🆔 Identity Footprinting & Provider Verification
+
+Before an installer performs destructive actions (like overwriting or deleting a binary during conflict resolution), it MUST verify that the binary belongs to the same provider.
+
+### The "--identity" Flag Strategy
+Implementing a hidden diagnostic flag in the application is the most reliable way to confirm ownership.
+
+1.  **The Flag:** `app --identity` returns a unique string like `corechunk/app`.
+2.  **The Verification:** The installer runs:
+    ```bash
+    if [path/to/binary --identity 2>/dev/null | grep -q "corechunk"]; then
+        # Proceed with managed update
+    else
+        # Critical warning: Foreign binary detected with same name
+    fi
+    ```
+
+### Why Verification Matters
+*   **Name Collisions:** Prevents accidental deletion of a different tool that shares the same name.
+*   **Distribution Awareness:** Distinguishes between a manually installed version (yours) and one managed by a system package manager (e.g., an AppImage or Snap).

@@ -1,64 +1,53 @@
 # 🟢 Standard: Data Types [CORE]
 
 ## Definition
-Types define the size and interpretation of bits in memory. This mirror shows the fundamental types and the shift of Boolean logic from a library to a native keyword.
+Types define the size and bit-level interpretation of memory space. In addition to standard integer and float primitives, strings exist as a library convention (`char[]` / `char*` with a null-terminator), and boolean logic has transitioned from library macros to native keyword definitions.
 
 ## 1. Legacy Way (C99 / C11 / C17)
-Standard primitives and library-based Boolean/Fixed-width support.
+* Primitives require library headers (`stdbool.h` for `bool`, `stdint.h` for fixed-width types).
+* Strings are pointer arrays initialized via character literals or raw stack arrays.
 
 ```c
 #include <stdio.h>
-#include <stdbool.h> // REQUIRED for bool (Same for C11/C17)
+#include <stdbool.h> // Required for bool
 
 int main() {
     int i = 10;
     float f = 3.14f;
-    double d = 3.14159;
-    char c = 'A';
     bool b = true;
-    char* s = "Hello"; // C-String (Pointer to char array)
+    char* s = "Hello"; // String pointer to read-only memory
+    char arr[] = "Stack"; // String array on stack (Read-Write)
 
-    printf("Int: %d\n", i);      // Output: Int: 10
-    printf("Float: %.2f\n", f);  // Output: Float: 3.14
-    printf("Double: %.5f\n", d); // Output: Double: 3.14159
-    printf("Char: %c\n", c);     // Output: Char: A
-    printf("Bool: %d\n", b);     // Output: Bool: 1
-    printf("Str: %s\n", s);      // Output: Str: Hello
+    printf("Bool: %d\n", b);
+    printf("Str: %s\n", s);
     return 0;
 }
 ```
 
 ## 2. Modern Way (C23)
-Fundamental types are now more native, including Boolean logic and type inference.
+* Booleans (`bool`, `true`, `false`) are native keywords requiring no headers.
+* Type inference using `auto` allows the compiler to deduce primitive types automatically at compile time.
 
 ```c
-#include <stdio.h> // Required for printf
+#include <stdio.h>
 
 int main() {
-    // Native Keywords: NO header required for bool, true, false, auto
     int i = 10;
     float f = 3.14f;
-    double d = 3.14159;
-    char c = 'A';
-    bool b = true;      // Native keyword
-    char* s = "Hello"; 
+    bool b = true; // Native keyword, no header
+    char* s = "Hello";
 
-    auto count = i;     // Native keyword: auto-infers 'int'
+    auto inferred_int = i; // Infers int
 
-    printf("Int: %d\n", i);      // Output: Int: 10
-    printf("Float: %.2f\n", f);  // Output: Float: 3.14
-    printf("Double: %.5f\n", d); // Output: Double: 3.14159
-    printf("Char: %c\n", c);     // Output: Char: A
-    printf("Bool: %d\n", b);     // Output: Bool: 1
-    printf("Str: %s\n", s);      // Output: Str: Hello
-    printf("Auto: %d\n", count); // Output: Auto: 10
+    printf("Bool: %d\n", b);
+    printf("Str: %s\n", s);
     return 0;
 }
 ```
 
 ## Deep-Dive Reference
-For exhaustive width variants and memory layouts:
-- [Integers](./data-type/integers.md) | [Floating Point](./data-type/floats.md) | [Fixed-Width](./data-type/fixed-width.md) | [Special Types](./data-type/special-types.md)
+For exhaustive analysis of individual structures, ranges, and sizes:
+- [Integers](./data-type/integers.md) | [Floating Point](./data-type/floats.md) | [Fixed-Width](./data-type/fixed-width.md) | [Special Types](./data-type/special-types.md) | [String Handling](../14-string-handling.md)
 
 # The Logic Bridge
-// Logic: C23 simplifies development by making Booleans (bool) and Type Inference (auto) native to the language syntax rather than relying on standard library macros.
+// Logic: Primitive variables map directly to CPU registers and memory width boundaries, while C-strings are not native data types but structured sequences mapped linearly in memory.

@@ -34,3 +34,19 @@ Linux shells search the `$PATH` environment variable from **left to right**. A t
 *   **The Trap:** If you update the app via `apt` (to `/usr/bin`), you will still be running the **old version** in `/usr/local/bin` without realizing it.
 
 **Rule of Thumb:** Never install the same app via both an Installer Script and a Package Manager simultaneously.
+
+## 🚦 Path Precedence & Shadowing Hierarchy
+
+The order of directories in the `$PATH` variable creates a hierarchy of execution. Understanding this is critical for preventing "Ghost Version" bugs.
+
+### Precedence Tiers (Typical Linux)
+1.  **OS Managed:** `/bin`, `/usr/bin` (Highest Priority)
+2.  **Admin Managed:** `/usr/local/bin`
+3.  **User Managed:** `~/.local/bin` (Lowest Priority)
+
+### The Shadowing Rule
+If `Precedence(ExistingPath) > Precedence(TargetPath)`, the new installation will be **shadowed**. The user will continue to run the old version unless they provide the full path or remove the higher-priority binary.
+
+### Installer Responsibility
+If the installer detects a shadowing condition, it must issue a high-visibility warning to the user:
+> *"Warning: An existing installation at /usr/bin/app will hide your new installation at /usr/local/bin/app due to path precedence."*

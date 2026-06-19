@@ -40,12 +40,18 @@ This is the **Chronological Path**. Topics are ordered by the natural learning p
     - [fixed-width.md](./data-type/fixed-width.md)
     - [special-types.md](./data-type/special-types.md)
 10. [10-string-escaping.md](./10-string-escaping.md) **[CORE]** (Invisible/Illegal characters)
-11. [11-interpolation.md](./11-interpolation.md) **[CORE]** (C-style formatting)
+11. [11-string-formatting-io.md](./11-string-formatting-io.md) **[CORE]** (C-style formatting & I/O)
+    - [anatomy.md](./io/anatomy.md)
+    - [fixed-width-specifiers.md](./io/fixed-width-specifiers.md)
 12. [12-scope-lifetime.md](./12-scope-lifetime.md) **[CORE]** (Shadowing, Visibility)
 13. [13-storage-classes.md](./13-storage-classes.md) **[SYSTEMS]** (Static, Extern, Volatile, Register)
 
 ### Phase 4: Native Power (Efficiency)
-14. [14-native-strings.md](./14-native-strings.md) **[PRO]** (Standard library string.h)
+14. [14-string-handling.md](./14-string-handling.md) **[PRO]** (String buffer management & safety)
+    - [declarations.md](./string/declarations.md)
+    - [modification.md](./string/modification.md)
+    - [input-methods.md](./string/input-methods.md)
+    - [copy-write-methods.md](./string/copy-write-methods.md)
 15. [15-pattern-matching.md](./15-pattern-matching.md) **[PRO]** (Regex with POSIX regcomp)
 16. [16-syntactic-automation.md](./16-syntactic-automation.md) **[SYSTEMS]** (Preprocessor Macros & Templates)
 
@@ -77,10 +83,11 @@ This is the **Chronological Path**. Topics are ordered by the natural learning p
 31. [31-closures-lambdas.md](./31-closures-lambdas.md) **[PRO]** (Function Pointers & Callbacks)
 
 ### Phase 8: Procedural Architecture
-32. [32-sequential-collections.md](./32-sequential-collections.md) **[CORE]** (Conceptual Hub)
+32. [32-arrays.md](./32-arrays.md) **[CORE]** (Conceptual Hub)
     - [fixed.md](./array/fixed.md)
     - [vla.md](./array/vla.md)
     - [multidim.md](./array/multidim.md)
+    - [pointer-decay.md](./array/pointer-decay.md)
 33. [33-associative-collections.md](./33-associative-collections.md) **[CORE]** (Custom Hashmaps)
 34. [34-structs-base.md](./34-structs-base.md) **[CORE]** (Record grouping)
 35. [35-procedural-mechanisms.md](./procedural/35-procedural-mechanisms.md) **[PRO]**
