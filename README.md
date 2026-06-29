@@ -24,6 +24,7 @@ The "Mental OS" for senior systems engineering: Debugging, Testing, and managing
 High-signal "Sources of Truth" and the methodologies to master them.
 *   📜 [**Official Docs Index**](./Necessary-Repos/official-docs-index.md) ([**How to Read**](./reading-docs.md))
 *   🎨 [**Well-Polished Repos**](./Necessary-Repos/well-polished-repos.md) ([**How to Read**](./reading-projects.md))
+*   📺 [**Coding YouTube Channels**](./Necessary-Repos/youtube-channels.md) (Remarkable video resources for systems, languages, and performance)
 
 ### 6. 📚 [**Libraries**](./libraries/README.md)
 Essential C/C++ utility and specialized libraries (SDL2, Boost, Dear ImGui, Raylib).
